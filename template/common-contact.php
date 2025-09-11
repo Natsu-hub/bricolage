@@ -7,7 +7,7 @@
                    <p class="c-common-contact__text">まずはお気軽にご相談ください。</p>
                </div>
                <div class="c-common-contact__btn">
-                   <a href="" class="c-common-contact__link">お問い合わせをする</a>
+                   <a href="<?php echo CONTACT_URL; ?>" class="c-common-contact__link">お問い合わせをする</a>
                </div>
            </div>
        </div>

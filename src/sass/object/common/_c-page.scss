@@ -29,6 +29,10 @@
   }
 }
 
+.page-numbers img {
+  transition: all 0.3s ease-out 0s;
+}
+
 @media (hover: hover) {
   .page-numbers:hover {
     background-color: $main-color;
@@ -36,15 +40,18 @@
   }
 
   .page-numbers.next:hover,
-  .page-numbers.prev:hover,
-  .page-numbers.dots:hover {
+  .page-numbers.prev:hover {
     background-color: $main-color;
     color: $white;
   }
 
-  .page-numbers.next:hover,
-  .page-numbers.prev:hover {
+  .page-numbers img:hover {
     opacity: 0.7;
+  }
+
+  .page-numbers.dots:hover {
+    background-color: $white;
+    color: initial;
   }
 }
 

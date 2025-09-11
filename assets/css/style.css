@@ -1426,6 +1426,11 @@ th {
 	width: 1.875rem;
 }
 
+.page-numbers img {
+	-webkit-transition: all 0.3s ease-out 0s;
+	transition: all 0.3s ease-out 0s;
+}
+
 .page-numbers.current {
 	background-color: #418ee8;
 	color: #fff;
@@ -4624,15 +4629,19 @@ input[type=submit] {
 }
 
 .page-numbers.next:hover,
-.page-numbers.prev:hover,
-.page-numbers.dots:hover {
+.page-numbers.prev:hover {
 	background-color: #418ee8;
 	color: #fff;
 }
 
-.page-numbers.next:hover,
-.page-numbers.prev:hover {
+.page-numbers img:hover {
 	opacity: 0.7;
+}
+
+.page-numbers.dots:hover {
+	background-color: #fff;
+	color: #000;
+	color: initial;
 }
 
 .c-scroll-top:hover {

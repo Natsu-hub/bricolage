@@ -1,0 +1,114 @@
+// @use "global" as *;
+
+// .p-top-works {
+//     padding-bottom: rem(120);
+//     background-color: $sub-background;
+//     background: linear-gradient(to bottom,
+//             $background 32px,
+//             $sub-background 32px);
+
+//     @include mq(md) {
+//         display: flex;
+//         flex-direction: column;
+//         padding-bottom: rem(80);
+//     }
+// }
+
+// .p-top-works__inner.l-inner {
+//     @include mq(md) {
+//         display: contents;
+//     }
+// }
+
+// .p-top-works__heading {
+
+//     @include mq(md) {
+//         margin-inline: auto;
+//         max-width: fit-content;
+//         order: 1;
+//     }
+// }
+
+// .p-top-works__btn {
+//     margin-top: rem(19);
+//     max-width: fit-content;
+//     margin-left: auto;
+
+//     @include mq(md) {
+//         order: 3;
+//         margin-right: auto;
+//         margin-top: rem(40);
+//     }
+// }
+
+// .p-top-works__wrapper {
+//     margin-top: rem(24);
+//     position: relative;
+
+//     &::before {
+//         content: "";
+//         position: absolute;
+//         background: $text;
+//         width: 100%;
+//         height: rem(90);
+//         top: 50%;
+//         transform: translateY(-50%);
+//         left: 0;
+
+//         @include mq(md) {
+//             display: none;
+//         }
+//     }
+
+//     @include mq(md) {
+//         order: 2;
+//         margin-top: rem(33);
+//         width: rem(500);
+//         max-width: 100%;
+//         margin-inline: auto;
+//     }
+// }
+
+// .p-top-works__slide-body {
+//     position: relative;
+// }
+
+// .p-top-works__prev {
+//     position: absolute;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     left: calc((-43 / 1440) * 100vw);
+//     padding: .4em;
+
+//     @media (max-width: 1320px) {
+//         left: calc((-35 / 1440) * 100vw);
+//     }
+
+//     @include mq(md) {
+//         display: none;
+//     }
+// }
+
+// .p-top-works__next {
+//     position: absolute;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     right: calc((-43 / 1440) * 100vw);
+//     padding: .4em;
+
+//     @media (max-width: 1320px) {
+//         right: calc((-35 / 1440) * 100vw);
+//     }
+
+//     @include mq(md) {
+//         display: none;
+//     }
+// }
+
+// .p-top-works__items {
+//     @include mq(md) {
+//         display: grid !important;
+//         grid-template-columns: repeat(1, 1fr);
+//         gap: rem(18);
+//     }
+// }

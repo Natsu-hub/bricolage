@@ -1,0 +1,47 @@
+@use "global" as *;
+
+.c-scroll-top {
+    height: rem(55);
+    width: rem(55);
+    position: fixed;
+    right: rem(20);
+    bottom: rem(20);
+    background: $text;
+    border: 2px solid $text;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: $layer-floating;
+    transition: all 0.3s ease 0s;
+    opacity: 0;
+
+    @include mq(md) {
+        display: none;
+    }
+}
+
+
+.c-scroll-top__arrow {
+    display: block;
+    height: 10px;
+    width: 10px;
+    border-top: 3px solid $white;
+    border-right: 3px solid $white;
+    transform: translateY(20%) rotate(-45deg);
+    transition: all 0.3s ease-out 0s;
+
+    @include mq(md) {
+        display: none;
+    }
+}
+
+@media (hover: hover) {
+    .c-scroll-top:hover {
+        background: $white;
+    }
+
+    .c-scroll-top:hover .c-scroll-top__arrow {
+        border-top: 3px solid $text;
+        border-right: 3px solid $text;
+    }
+}

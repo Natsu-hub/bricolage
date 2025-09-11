@@ -1,0 +1,86 @@
+@use "global" as *;
+
+html {
+  //~375px
+  @media (max-width: 375px) {
+    font-size: vw(375, $base-font-size);
+  }
+
+  @if $rule == "max" {
+    // PCファースト
+    //375px~767px
+    @include mq("md") {
+      font-size: #{$base-font-size}px;
+    }
+
+    // 768px〜inner
+    @include mq("inner") {
+      font-size: vw(strip-unit($inner), $base-font-size);
+    }
+  } @else {
+    // SPファースト
+    // 768px~inner
+    @include mq() {
+      font-size: vw(strip-unit($inner), $base-font-size);
+    }
+
+    // inner以上
+    @include mq("inner") {
+      font-size: #{$base-font-size}px;
+    }
+  }
+
+  //ベースフォントサイズ
+  font-size: #{$base-font-size}px;
+}
+
+/* link */
+/* ============================================ */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s;
+  cursor: pointer;
+
+  // &:hover {
+  //   opacity: 0.7;
+  // }
+
+  @include mq("md") {
+    opacity: unset;
+  }
+}
+
+/* img */
+/* ============================================ */
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+/* body */
+/* ============================================ */
+body {
+  min-height: 100vh;
+  font-family: $base-font-family;
+  color: $text;
+  background: $background;
+  z-index: $layer-background;
+  position: relative;
+  font-size: rem(16);
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  line-height: 1.8;
+
+  @include mq(md) {
+    min-height: 100svh;
+  }
+}
+
+.body-no-scroll {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}

@@ -1,0 +1,83 @@
+@use "global" as *;
+
+.p-issue {
+  padding-inline: rem(30);
+  @include mq(md) {
+    padding-inline: rem(20);
+  }
+}
+
+.p-issue__bg {
+  position: relative;
+  overflow-x: hidden;
+  padding-block: rem(60) rem(80);
+  border-radius: rem(16);
+  background-color: $background02;
+
+  @include mq(md) {
+    padding-block: rem(60) rem(54);
+  }
+}
+
+.p-issue__items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: rem(45);
+  margin-top: rem(37);
+
+  @include mq(md) {
+    gap: rem(23);
+    margin-top: rem(31);
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.p-issue__item {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 2;
+  gap: 0;
+}
+
+.p-issue__item-img {
+  width: rem(37);
+  margin-inline: auto;
+  display: block;
+  position: relative;
+  @include mq(md) {
+    width: rem(32);
+  }
+}
+
+.p-issue__item-box {
+  margin-top: rem(-18);
+  padding: rem(40) rem(20) rem(25);
+  border-radius: rem(4);
+  background-color: $white;
+
+  @include mq(md) {
+    margin-top: rem(-16);
+    padding-top: rem(32);
+  }
+}
+
+.p-issue__item-title {
+  font-size: rem(18);
+  font-weight: 700;
+  line-height: 1.5;
+
+  @include mq(md) {
+    font-size: rem(17);
+  }
+}
+
+.p-issue__item-title span {
+  color: $main-color;
+}
+
+.p-issue__item-content {
+  margin-top: rem(18);
+  @include mq(md) {
+    font-size: rem(15);
+  }
+}

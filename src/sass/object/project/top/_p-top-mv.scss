@@ -1,0 +1,137 @@
+@use "global" as *;
+
+.p-top-mv {
+  position: relative;
+  @include mq(md) {
+    padding-bottom: rem(120);
+  }
+}
+
+.p-top-mv__illustration {
+  position: absolute;
+  bottom: rem(12);
+  left: calc(50% - min(50vw, #{rem(665)}));
+  width: rem(98);
+
+  @media (max-width: 1350px) {
+    left: rem(30);
+  }
+
+  @include mq(md) {
+    width: rem(74);
+    // top: 20%;
+    // display: flex;
+    // flex-direction: row-reverse;
+  }
+
+  @include mq("sm") {
+    left: rem(5);
+  }
+}
+
+.p-top-mv__title-box {
+  //   top: 50%;
+  //   white-space: nowrap;
+  position: absolute;
+  top: 50%;
+  left: calc(50% - min(50vw, #{rem(600)}));
+  transform: translateY(-50%);
+  line-height: 1;
+
+  @media (max-width: 1350px) {
+    left: rem(70);
+  }
+
+  @include mq(md) {
+    position: static;
+    transform: none;
+    padding-top: rem(138);
+    padding-inline: rem(20);
+    // top: 20%;
+    // display: flex;
+    // flex-direction: row-reverse;
+  }
+
+  @include mq("sm") {
+    // left: rem(22);
+  }
+}
+
+.p-top-mv__en-text {
+  color: $gray;
+  font-family: $en-font-family;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  @include mq(md) {
+    font-size: rem(13);
+  }
+}
+
+.p-top-mv__title {
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  margin-top: rem(20);
+  @include mq(md) {
+    margin-top: rem(11);
+  }
+}
+
+.p-top-mv__title-top {
+  font-size: rem(30);
+  @include mq(md) {
+    font-size: rem(18);
+  }
+}
+
+.p-top-mv__title-bottom {
+  font-size: rem(40);
+  margin-top: rem(16);
+  color: $main-color;
+  @include mq(md) {
+    font-size: rem(33);
+    margin-top: rem(9);
+    line-height: 1.3;
+  }
+}
+
+.p-top-mv__sub-text {
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  margin-top: rem(18);
+  @include mq(md) {
+    margin-top: rem(10);
+    font-size: rem(14);
+  }
+}
+
+.p-top-mv__img {
+  width: calc((910 / 1400) * 100vw);
+  margin-left: auto;
+  @include mq(md) {
+    margin-top: rem(26);
+    width: calc((355 / 375) * 100vw);
+  }
+}
+
+.p-top-mv__img img {
+  object-fit: contain;
+  height: auto;
+}
+
+/* 行ごとのspanをブロック化（div→spanでも改行される） */
+.p-top-mv__title-top,
+.p-top-mv__title-bottom {
+  display: block;
+}
+
+/* 文字分割アニメの初期状態（FOUC防止） */
+.js-text-effect .char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.4em);
+}
+.char--space {
+  display: inline-block;
+  width: 0.33em;
+} /* お好みで */

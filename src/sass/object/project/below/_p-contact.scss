@@ -1,0 +1,24 @@
+@use "global" as *;
+
+.p-contact {
+  padding-block: rem(60) rem(160);
+  @include mq(md) {
+    padding-block: rem(60) rem(140);
+  }
+}
+
+.p-contact__text {
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+.p-contact__form {
+  max-width: rem(640);
+  margin-inline: auto;
+  margin-top: rem(60);
+
+  @include mq(md) {
+    max-width: 100%;
+  }
+}

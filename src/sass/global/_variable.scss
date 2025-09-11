@@ -1,0 +1,69 @@
+/********************************
+* インナー
+********************************/
+$inner: 1040px;
+
+// 余白
+$padding-pc: 25px;
+$padding-sp: 15px;
+
+/********************************
+* フォント
+********************************/
+$base-font-family: "Noto Sans JP", sans-serif;
+$en-font-family: "Montserrat", sans-serif;
+$en-font-family02: "Poppins", sans-serif;
+$number-font-family: "Montserrat", sans-serif;
+
+$sub-font-family: "Yuji Boku", serif;
+
+// フォントサイズ
+$base-font-size: 16;
+
+// フォントウェイト
+$black: 800;
+$bold: 700;
+$medium: 500;
+$regular: 400;
+
+/********************************
+* カラー
+********************************/
+$main-color: #418ee8;
+$sub-color: #37a9e6;
+$title-deco: #daf1ff;
+$border: #bed7f4;
+$number: #7cc7ef;
+$text: #333333;
+$text--gray: #888;
+$text--light-blue: #ecf7fd;
+$gray: #a6aaae;
+$blue: #daf1ff;
+$yellow: #fbbf33;
+$red: #cd3e3e;
+$white: #fff;
+$bg-gradation: linear-gradient(180deg, #f6fbff 0%, #eaf0f9 100%);
+$bg-gradation02: linear-gradient(0deg, #4c99eb 8.17%, #56bded 100%);
+$bg-light-blue: #f0f7fb;
+$background: #fff;
+$background02: #F2F2F2;
+
+$border-color: #9ccfe6;
+$main-gradation: linear-gradient(264deg, #0350e6 4.42%, #00c4fd 95.58%);
+$sub-background: #e2f3fd;
+$gray02: #e7e7e7;
+$gray03: #c0c2dd;
+$blue02: #282c76;
+$blue03: #282c76;
+
+/********************************
+* レイヤー
+********************************/
+$layer-modal: 100;
+$layer-drawer: 40;
+$layer-floating: 30;
+$layer-header: 35;
+$layer-footer: 10;
+$layer-up: 2;
+$layer-default: 1;
+$layer-background: -1;

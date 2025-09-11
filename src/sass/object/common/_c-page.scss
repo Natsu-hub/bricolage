@@ -1,0 +1,84 @@
+@use "global" as *;
+
+/* =========================================
+# pagenavi
+========================================= */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: rem(31);
+}
+
+.page-numbers {
+  margin-inline: rem(10);
+  width: rem(30);
+  height: rem(30);
+  aspect-ratio: 1/1;
+  border-radius: rem(100);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: $text;
+  transition: all 0.3s ease-out 0s;
+  font-size: rem(20);
+  font-weight: 700;
+  font-family: $en-font-family;
+
+  @include mq(md) {
+  }
+}
+
+@media (hover: hover) {
+  .page-numbers:hover {
+    background-color: $main-color;
+    color: $white;
+  }
+
+  .page-numbers.next:hover,
+  .page-numbers.prev:hover,
+  .page-numbers.dots:hover {
+    background-color: $main-color;
+    color: $white;
+  }
+
+  .page-numbers.next:hover,
+  .page-numbers.prev:hover {
+    opacity: 0.7;
+  }
+}
+
+.page-numbers.current {
+  background-color: $main-color;
+  color: $white;
+}
+
+.page-numbers.dots {
+  border: none;
+}
+
+.page-numbers.next,
+.page-numbers.prev {
+  border: none;
+  padding: 0.4em;
+  display: contents;
+  transition: all 0.3s ease-out 0s;
+  flex-shrink: 0;
+
+  @include mq(md) {
+    margin-inline: 0;
+  }
+}
+
+.page-numbers img {
+  max-width: 100%;
+  width: rem(30);
+  aspect-ratio: 30/31;
+
+  @include mq(md) {
+  }
+}
+
+.page-numbers.prev img {
+  transform: scaleX(-1);
+}

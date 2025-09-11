@@ -1,0 +1,108 @@
+@use "global" as *;
+
+.p-news__inner {
+  padding-block: rem(40) rem(160);
+  @include mq(md) {
+    padding-block: rem(40) rem(140);
+  }
+}
+
+.p-news__container {
+  display: flex;
+  gap: rem(100);
+  @include mq(md) {
+    flex-direction: column;
+  }
+}
+
+.p-news__cards {
+  gap: rem(40);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(rem(240), 1fr));
+  @include mq(md) {
+    gap: rem(48);
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.p-news__card {
+  max-width: rem(240);
+  @include mq(md) {
+    max-width: 100%;
+  }
+}
+
+.p-news__container--single {
+  gap: rem(68);
+}
+
+.p-news__main-content {
+  width: rem(800);
+  max-width: 100%;
+}
+
+.p-news__main-content--single {
+  width: rem(712);
+}
+
+.p-news__items {
+}
+
+.p-news__pages {
+  margin-top: rem(40);
+  max-width: fit-content;
+  margin-inline: auto;
+}
+
+.p-news__btn {
+  margin-top: rem(56);
+  max-width: fit-content;
+  margin-inline: auto;
+}
+
+.p-news__aside {
+  display: flex;
+  flex-direction: column;
+  gap: rem(16);
+  width: rem(300);
+  max-width: 100%;
+  flex-shrink: 0;
+}
+
+.p-news__aside-box {
+}
+
+.p-news__aside-title {
+  font-size: rem(22);
+  font-weight: 700;
+  line-height: 1.4;
+  padding-block: rem(5);
+  border-bottom: rem(1) solid $border;
+  color: $main-color;
+  @include mq(md) {
+  }
+}
+
+.p-news__aside-lists {
+  margin-top: rem(10);
+  display: flex;
+  flex-direction: column;
+  gap: rem(10);
+}
+
+.p-news__aside-list {
+  font-size: rem(15);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+}
+
+.p-news__aside-list a {
+  transition: all 0.3s ease-out 0s;
+}
+
+@media (hover: hover) {
+  .p-news__aside-list a:hover {
+    color: $sub-color;
+  }
+}

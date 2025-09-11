@@ -1,0 +1,103 @@
+@use "global" as *;
+
+.p-top-column {
+  padding-block: rem(140);
+  position: relative;
+  max-width: rem(1234);
+  margin-inline: auto;
+
+  @include mq(md) {
+    padding-block: rem(100) rem(160);
+  }
+}
+
+.p-top-column__deco {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: rem(256);
+  @include mq(inner) {
+    left: rem(15);
+  }
+  @include mq(md) {
+    width: rem(172);
+    left: rem(20);
+  }
+}
+
+.p-top-column__inner {
+  display: flex;
+  justify-content: space-between;
+  gap: rem(60);
+
+  @include mq(md) {
+    flex-direction: column;
+    order: 1;
+    gap: rem(40);
+  }
+}
+
+.p-top-column__item {
+  display: flex;
+  flex-direction: column;
+  gap: rem(80);
+  width: rem(280);
+  max-width: 100%;
+  @include mq(md) {
+    display: contents;
+    width: 100%;
+  }
+}
+
+.p-top-column__labels {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: rem(20);
+  padding: rem(20);
+  border-radius: rem(8);
+  background: $bg-light-blue;
+}
+
+.p-top-column__label {
+  transition: all 0.3s ease-out 0s;
+}
+
+@media (hover: hover) {
+  .p-top-column__label:hover {
+    color: $main-color;
+  }
+}
+
+.p-top-column__btn {
+  @include mq(md) {
+    // margin-top: rem(20);
+    max-width: fit-content;
+    margin-inline: auto;
+    order: 3;
+    margin-top: rem(20);
+  }
+}
+
+.p-top-column__box {
+  display: flex;
+  flex-direction: column;
+  gap: rem(80);
+  @include mq(md) {
+    order: 2;
+  }
+}
+
+.p-top-column__lists {
+  width: rem(740);
+  max-width: 100%;
+}
+
+.p-top-column__cards {
+  gap: rem(40);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  @include mq(md) {
+    gap: rem(48);
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

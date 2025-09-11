@@ -1,0 +1,32 @@
+@use "global" as *;
+
+.c-deco-01 {
+  width: rem(57);
+  position: absolute;
+  @include mq(md) {
+    width: rem(38);
+  }
+}
+
+.c-deco-02 {
+  position: absolute;
+  width: rem(44);
+  @include mq(md) {
+    width: rem(34);
+  }
+}
+
+.c-deco-03 {
+  position: absolute;
+  width: rem(56);
+  @include mq(md) {
+    width: rem(46);
+  }
+}
+
+.c-deco-04 {
+  width: rem(68);
+  @include mq(md) {
+    width: rem(40);
+  }
+}

@@ -1,0 +1,67 @@
+@use "global" as *;
+
+.p-access {
+  padding-block: rem(120) rem(160);
+  @include mq(md) {
+    padding-block: rem(100) rem(140);
+  }
+}
+
+/* Google Mapを囲う要素 */
+.p-access__map {
+  max-width: rem(520);
+  width: 100%;
+  margin-top: rem(40);
+  margin-inline: auto;
+
+  @include mq("md") {
+    max-width: 100%;
+  }
+}
+
+/* Google Mapのiframe */
+.p-access__map iframe {
+  height: auto;
+  aspect-ratio: 520/347;
+  width: 100%;
+}
+
+.p-access__text {
+  margin-top: rem(40);
+  max-width: fit-content;
+  margin-inline: auto;
+}
+
+.p-access__link {
+  margin-top: rem(30);
+  max-width: fit-content;
+  margin-inline: auto;
+}
+
+.p-access__map-link {
+  letter-spacing: 0.04em;
+  font-family: $en-font-family02;
+  line-height: 1;
+  text-decoration-line: underline;
+  transition: all 0.3s ease-out 0s;
+  padding-right: rem(27);
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    background: url(../images/common/icon_map.svg) no-repeat center
+      center/contain;
+    width: rem(20);
+    aspect-ratio: 1/1;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+  }
+}
+
+@media (hover: hover) {
+  .p-access__map-link:hover {
+    color: $main-color;
+  }
+}

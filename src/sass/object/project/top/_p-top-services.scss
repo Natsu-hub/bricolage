@@ -1,0 +1,148 @@
+@use "global" as *;
+
+.p-top-service {
+  padding-inline: rem(30);
+  @include mq(md) {
+    padding-inline: rem(20);
+  }
+}
+
+.p-top-service__bg {
+  padding-block: rem(180) rem(120);
+  position: relative;
+  overflow-x: hidden;
+  @include mq(md) {
+    padding-block: rem(90);
+  }
+}
+
+.p-top-service__deco {
+  bottom: rem(-70);
+  right: rem(10);
+  z-index: 2;
+  @include mq(inner) {
+    right: rem(20);
+  }
+  @include mq(md) {
+    bottom: rem(-78);
+    right: rem(10);
+  }
+}
+
+.p-top-service__inner {
+  position: relative;
+}
+
+.p-top-service__title-box {
+  display: flex;
+  align-items: flex-end;
+  gap: rem(60);
+  position: relative;
+  z-index: 2;
+  @include mq(md) {
+    gap: rem(20);
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.p-top-service__deco-title {
+  top: rem(-90);
+  right: rem(-220);
+  z-index: -1;
+  @include mq(md) {
+    top: rem(-30);
+    right: rem(-260);
+  }
+}
+
+
+.p-top-service__items {
+  margin-top: rem(80);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: rem(48) rem(40);
+  @include mq(md) {
+    margin-top: rem(48);
+    grid-template-columns: repeat(1, 1fr);
+    gap: rem(40);
+  }
+}
+
+.p-top-service__item {
+  border-radius: rem(8);
+  background-color: $white;
+  /* card-shadow */
+  box-shadow: 0 0 rem(30) 0 rgba(6, 71, 148, 0.07);
+  padding: rem(30) rem(48);
+  gap: rem(24);
+  display: flex;
+  flex-direction: column;
+  @include mq(md) {
+    gap: rem(18);
+    padding: rem(30) rem(20);
+  }
+}
+
+.p-top-service__item-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: (15);
+  @include mq(md) {
+    flex-direction: column;
+    align-items: start;
+    gap: (20);
+  }
+}
+
+.p-top-service__item-title {
+  gap: rem(8);
+  display: flex;
+  flex-direction: column;
+}
+
+.p-top-service__item-title-number {
+  font-size: rem(14);
+  font-weight: 700;
+  font-family: $en-font-family;
+  color: $sub-color;
+  letter-spacing: 0.08em;
+}
+
+.p-top-service__item-title-ja {
+  font-size: rem(15);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+}
+
+.p-top-service__item-title-en {
+  font-family: $en-font-family02;
+  font-size: rem(32);
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.p-top-service__item-img {
+  width: rem(200);
+  max-width: 100%;
+  @include mq(md) {
+    width: rem(255);
+    margin-inline: auto;
+  }
+}
+
+.p-top-service__item-content {
+}
+
+.p-top-service__btn {
+  margin-top: rem(80);
+  max-width: fit-content;
+  margin-inline: auto;
+
+  @include mq(md) {
+    margin-top: rem(48);
+  }
+}

@@ -1,0 +1,118 @@
+// @use "global" as *;
+
+// .c-works__item {
+//     padding: rem(18);
+//     padding-bottom: rem(28);
+//     background: $background;
+//     position: relative;
+//     overflow: hidden;
+
+//     @include mq(md) {
+//         padding-bottom: rem(35);
+//     }
+// }
+
+// .c-works__item-link {
+//     display: flex;
+//     flex-direction: column;
+//     height: 100%;
+// }
+
+
+// .c-works__item--top {
+//     border-left: 1px solid $border-color;
+
+//     @include mq(md) {
+//         border-left: none;
+//     }
+// }
+
+// .c-works__item--below {
+//     border-top: 1px solid $gray;
+//     border-right: 1px solid $gray;
+//     border-left: 1px solid $gray;
+//     border-bottom: 1px solid $gray;
+
+//     @include mq(md) {}
+// }
+
+// .c-works__img {
+//     height: auto;
+//     display: block;
+//     position: relative;
+//     overflow: hidden;
+// }
+
+// .c-works__img img {
+//     aspect-ratio: 269/180;
+//     object-fit: cover;
+//     height: auto;
+//     overflow: hidden;
+//     transition: transform .8s;
+
+//     @include mq(md) {
+//         aspect-ratio: 275/180;
+//     }
+// }
+
+// .c-works__body {
+//     padding-top: rem(21);
+//     flex: 1 1 auto;
+//     display: flex;
+//     flex-direction: column;
+
+//     @include mq(md) {
+//         padding-top: rem(24);
+//     }
+// }
+
+// .c-works__date {
+//     font-family: $en-font-family;
+//     font-size: rem(13);
+//     font-weight: 500;
+//     letter-spacing: .65px;
+// }
+
+// .c-works__card-title {
+//     flex-grow: 1;
+//     font-size: rem(18);
+//     letter-spacing: .9px;
+//     display: -webkit-box;
+//     -webkit-line-clamp: 5;
+//     -webkit-box-orient: vertical;
+//     overflow: hidden;
+//     margin-bottom: rem(13);
+
+//     @include mq(md) {}
+// }
+
+// .c-works__category {
+//     margin-top: auto;
+//     display: flex;
+//     align-items: flex-end;
+//     /* ボタンを下揃えに配置 */
+//     justify-content: space-between;
+// }
+
+// .c-works__category-link {
+//     display: inline-block;
+//     border-radius: 22px;
+//     border: 1px solid $text;
+//     padding: rem(3) rem(7);
+//     line-height: 1;
+//     font-size: rem(12);
+//     letter-spacing: .6px;
+// }
+
+
+// @media (hover: hover) {
+//     .c-works__item:hover .c-works__img img {
+//         transform: scale(1.1);
+//         transition: transform .8s;
+//     }
+// }
+
+// .c-works__no-article {
+//     color: $white;
+//     text-align: center;
+// }

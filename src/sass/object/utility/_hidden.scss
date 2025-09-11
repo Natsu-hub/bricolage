@@ -1,0 +1,84 @@
+@use "global" as *;
+
+//1440px以上を表示
+.u-wide {
+  @include mq("xl") {
+    display: none;
+  }
+}
+
+//1024px以上を表示
+.u-pc {
+  @include mq("lg") {
+    display: none;
+  }
+}
+
+//768px以上を表示
+.u-desktop {
+  @include mq("md") {
+    display: none;
+  }
+}
+
+//1024まで表示
+.u-xl {
+  @include mq("xl") {
+    display: none;
+  }
+}
+
+//tabまで表示
+.u-tab-hidden {
+  @include mq("lg") {
+    display: none;
+  }
+}
+
+.u-inner {
+  display: none;
+
+  @include mq("inner") {
+    display: block;
+  }
+}
+.u-tab {
+  display: none;
+
+  @include mq("lg") {
+    display: block;
+  }
+}
+
+//モバイルのみ表示
+.u-mobile {
+  display: none;
+
+  @include mq("md") {
+    display: block;
+  }
+}
+.u-mobile--grid {
+  display: none;
+
+  @include mq("md") {
+    display: grid;
+  }
+}
+
+.u-mobile--flex {
+  display: none;
+
+  @include mq("md") {
+    display: flex;
+  }
+}
+
+//smのみ表示
+.u-sm {
+  display: none;
+
+  @include mq("sm") {
+    display: block;
+  }
+}

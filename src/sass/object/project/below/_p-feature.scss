@@ -1,0 +1,144 @@
+@use "global" as *;
+
+.p-feature {
+  padding-inline: rem(30);
+  @include mq(md) {
+    padding-inline: rem(20);
+  }
+}
+
+.p-feature__bg {
+  position: relative;
+  overflow-x: hidden;
+  padding-block: rem(80) rem(100);
+  @include mq(md) {
+    padding-block: rem(60) rem(80);
+  }
+}
+
+.p-feature__deco {
+  z-index: 2;
+  top: rem(-18);
+  left: rem(-22);
+  @include mq(xl) {
+    left: rem(20);
+  }
+  @include mq(md) {
+    top: rem(-40);
+    left: rem(20);
+  }
+}
+
+.p-feature__inner {
+  position: relative;
+}
+
+.p-feature__items {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: rem(60);
+  margin-top: rem(60);
+  @include mq(md) {
+    margin-top: rem(48);
+    gap: rem(54);
+  }
+}
+
+.p-feature__item {
+  border-radius: rem(16);
+  background-color: $white;
+  /* card-shadow */
+  box-shadow: 0 0 rem(30) 0 rgba(6, 71, 148, 0.07);
+  padding: rem(43) rem(110);
+  display: flex;
+  align-items: center;
+  gap: rem(60);
+  position: relative;
+  @include mq(md) {
+    flex-direction: column;
+    align-items: start;
+    gap: 0;
+    padding: rem(32) rem(60) rem(40);
+  }
+  @include mq("sm") {
+    padding-inline: rem(20);
+  }
+}
+
+.p-feature__item:nth-of-type(even) {
+  flex-direction: row-reverse;
+  @include mq(md) {
+    flex-direction: column;
+  }
+}
+
+.p-feature__item-box {
+  width: rem(380);
+  max-width: 100%;
+  position: relative;
+  @include mq(md) {
+    display: contents;
+  }
+}
+
+.p-feature__item-title {
+  gap: rem(8);
+  display: flex;
+  flex-direction: column;
+  color: $main-color;
+  @include mq(md) {
+    gap: rem(4);
+    order: 1;
+  }
+}
+
+.p-feature__item-title-number {
+  font-size: rem(68);
+  font-weight: 400;
+  font-family: $en-font-family;
+  color: $border;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  position: absolute;
+  top: rem(23);
+  right: rem(38);
+  @include mq(md) {
+    position: static;
+    font-size: rem(18);
+    font-weight: 700;
+  }
+}
+
+.p-feature__item:nth-of-type(even) .p-feature__item-title-number {
+  right: auto;
+  left: rem(33);
+}
+
+.p-feature__item-title-ja {
+  font-size: rem(24);
+  font-weight: 700;
+  line-height: 1.4;
+  @include mq(md) {
+    margin-top: rem(4);
+    font-size: rem(20);
+  }
+}
+
+.p-feature__item-img {
+  width: rem(380);
+  max-width: 100%;
+  @include mq(md) {
+    margin-inline: auto;
+    width: rem(255);
+    order: 3;
+    margin-top: rem(14);
+  }
+}
+
+.p-feature__item-content {
+  margin-top: rem(24);
+  @include mq(md) {
+    margin-top: rem(12);
+    order: 2;
+  }
+}

@@ -1,0 +1,16 @@
+@use "global" as *;
+
+.c-deco-title {
+  position: absolute;
+  font-family: $en-font-family;
+  font-weight: 200;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  font-size: rem(160);
+  color: #daf1ff;
+  text-transform: uppercase;
+  @include mq(md) {
+    font-size: rem(100);
+    letter-spacing: 0em;
+  }
+}

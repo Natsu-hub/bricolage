@@ -1,0 +1,5 @@
+@use "global" as *;
+.c-bg {
+  border-radius: rem(16);
+  background: linear-gradient(180deg, #f6fbff 0%, #eaf0f9 100%);
+}

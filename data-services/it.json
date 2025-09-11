@@ -1,0 +1,36 @@
+{
+    "below_mv": {
+      "en": "it",
+      "ja": "IT実装・運用",
+      "deco": "common/deco04.svg",
+      "bg_title": "it",
+      "img": "below/service_fv-img02.svg",
+      "img_alt": "ITのイメージ"
+    },
+    "issues": [
+      { "icon": "below/check.svg", "icon_alt": "チェックマーク",
+        "title": "ツール導入が増え、<span>運用が複雑</span>",
+        "content": "要件整理し、ツール統合やデータ連携を設計します。" },
+      { "icon": "below/check.svg", "icon_alt": "チェックマーク",
+        "title": "属人化で<span>引き継ぎが難しい</span>",
+        "content": "ドキュメント整備と運用ルールで標準化します。" }
+    ],
+    "solution": {
+      "title_ja": "現場が回るITに<br>“ちょうど良い”設計を",
+      "content": "要件→設計→導入→運用まで伴走。過度な高度化は避け、効果に直結させます。"
+    },
+    "features": [
+      { "title": "要件定義から<br>導入・運用まで", "content": "過剰機能を避け、使える仕組みを。",
+        "image": "common/service_img01.svg", "image_alt": "要件定義" },
+      { "title": "データ連携と<br>業務プロセス整備", "content": "二重入力を削減し、整合性を担保。",
+        "image": "below/service_img05.svg", "image_alt": "連携" },
+      { "title": "ドキュメント・<br>ルール整備", "content": "属人化の解消と人の入れ替わりに強く。",
+        "image": "below/service_img06.svg", "image_alt": "標準化" }
+    ],
+    "services": [
+      { "title": "要件定義/設計", "image": "below/service_img07.svg", "image_alt": "設計", "list": ["業務フロー整理","システム要件定義","選定支援"] },
+      { "title": "導入・運用伴走", "image": "below/service_img08.svg", "image_alt": "導入", "list": ["初期設定","権限設計","運用ルール"] },
+      { "title": "データ連携", "image": "below/service_img09.svg", "image_alt": "連携", "list": ["ツール間連携","ETLの設計","メンテナンス"] }
+    ]
+  }
+  

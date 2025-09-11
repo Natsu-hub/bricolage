@@ -1,0 +1,138 @@
+@use "global" as *;
+
+.p-below-works {
+    padding-block: rem(196) rem(120);
+
+    @include mq(md) {
+        padding-block: rem(40) rem(56);
+    }
+}
+
+.p-below-works__date {
+    text-align: center;
+    display: block;
+    font-size: rem(20);
+    letter-spacing: 1px;
+
+    @include mq(md) {
+        font-size: rem(14);
+        letter-spacing: 0.7px;
+        font-weight: 500;
+    }
+}
+
+.p-below-works__heading {
+    margin-top: rem(10);
+
+    @include mq(md) {
+        margin-top: rem(5);
+    }
+}
+
+.p-below-works__category {
+    margin-top: rem(20);
+
+    @include mq(md) {
+        margin-top: rem(18);
+    }
+}
+
+.p-works__category-link {
+    margin-left: auto;
+    display: block;
+    max-width: fit-content;
+    border-radius: 22px;
+    border: 1px solid $main-color;
+    padding: rem(5) rem(18) rem(7);
+    line-height: 1;
+    letter-spacing: .9px;
+    color: $main-color;
+
+    @include mq(md) {
+        margin-inline: auto;
+    }
+}
+
+.p-below-works__body {
+    margin-top: rem(80);
+
+    @include mq(md) {
+        margin-top: rem(40);
+    }
+}
+
+.p-below-works__box-bg {
+    margin-top: rem(-168);
+    border-radius: 12px;
+    background: $sub-background;
+    padding-block: rem(208) rem(96);
+    padding-inline: rem(40);
+
+    @include mq(md) {
+        margin-top: 0;
+        background: transparent;
+        padding: 0;
+    }
+}
+
+.p-below-works__box {
+    border-radius: 12px;
+    background: $white;
+    max-width: rem(966);
+    margin-inline: auto;
+    padding: rem(56) rem(80) rem(72);
+
+    @include mq(md) {
+        padding: 0;
+    }
+}
+
+.p-below-works__img {
+    max-width: rem(488);
+    display: block;
+    margin-inline: auto;
+
+    @include mq(md) {}
+}
+
+.p-below-works__img img {
+    aspect-ratio: 488/311;
+    object-fit: cover;
+    height: auto;
+
+    @include mq(md) {
+        aspect-ratio: 311/190;
+    }
+}
+
+.p-below-works__back {
+    margin-top: rem(48);
+    max-width: rem(966);
+    margin-inline: auto;
+
+    @include mq(md) {
+        margin-top: rem(33);
+    }
+}
+
+.p-below-works__back-link {
+    display: flex;
+    align-items: center;
+    gap: rem(16);
+}
+
+.p-below-works__arrow {
+    max-width: rem(14);
+    display: block;
+}
+
+.p-below-works__arrow img {
+    object-fit: contain;
+    vertical-align: middle;
+    transform: scaleX(-1);
+}
+
+.p-below-works__text {
+    font-size: rem(18);
+    letter-spacing: .9px;
+}

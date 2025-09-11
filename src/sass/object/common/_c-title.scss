@@ -1,0 +1,71 @@
+@use "global" as *;
+
+.c-title {
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+  @include mq(md) {
+    gap: rem(10);
+  }
+}
+
+.c-title--center {
+  max-width: fit-content;
+  width: 100%;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.c-title-en {
+  font-size: rem(16);
+  letter-spacing: 0.08em;
+  line-height: 1;
+  font-weight: 600;
+  padding-left: rem(16);
+  position: relative;
+  display: block;
+  color: $sub-color;
+  font-family: $en-font-family02;
+  text-transform: uppercase;
+
+  @include mq(md) {
+    font-size: rem(13);
+    padding-left: rem(14);
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    background: url(../images/common/section-arrow.svg) no-repeat center
+      center/contain;
+    width: rem(8);
+    aspect-ratio: 8/10;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    @include mq(md) {
+      width: rem(6);
+      aspect-ratio: 6/7;
+    }
+  }
+}
+
+.c-title-en--white {
+  color: $white;
+  &::before {
+    background: url(../images/below/section-arrow-white.svg) no-repeat center
+      center/contain;
+  }
+}
+
+.c-title-ja {
+  display: block;
+  font-size: rem(40);
+  letter-spacing: 0.08em;
+  line-height: 1;
+  font-weight: 500;
+  @include mq(md) {
+    font-size: rem(30);
+  }
+}

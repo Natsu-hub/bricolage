@@ -1,0 +1,72 @@
+@use "global" as *;
+
+.p-404 {
+  padding-block: rem(200);
+
+  @include mq(md) {
+    padding-block: rem(180) rem(120);
+  }
+}
+
+.p-404__title {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+  align-items: center;
+  @include mq(md) {
+    margin-left: 0;
+    align-items: start;
+  }
+}
+
+.p-404__title-deco {
+  position: absolute;
+  top: rem(-58);
+  left: 0;
+  @include mq(md) {
+    top: rem(-53);
+    left: rem(-7);
+  }
+}
+.p-404__title-en {
+  font-size: rem(16);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  color: $sub-color;
+  font-family: $en-font-family02;
+  text-transform: uppercase;
+  @include mq(md) {
+    font-size: rem(14);
+  }
+}
+
+.p-404__title-ja {
+  font-size: rem(32);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  @include mq(md) {
+    font-size: rem(20);
+    font-weight: 700;
+  }
+}
+
+.p-404__text {
+  margin-top: rem(120);
+  text-align: center;
+  @include mq(md) {
+    margin-top: rem(80);
+    text-align: left;
+  }
+}
+
+.p-404__back {
+  margin-top: rem(120);
+  max-width: fit-content;
+  margin-inline: auto;
+  @include mq(md) {
+    margin-top: rem(100);
+  }
+}

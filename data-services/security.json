@@ -1,0 +1,36 @@
+{
+    "below_mv": {
+      "en": "security",
+      "ja": "セキュリティ体制構築",
+      "deco": "common/deco04.svg",
+      "bg_title": "security",
+      "img": "below/service_fv-img02.svg",
+      "img_alt": "セキュリティのイメージ"
+    },
+    "issues": [
+      { "icon": "below/check.svg", "icon_alt": "チェックマーク",
+        "title": "ISMS / Pマーク取得を<span>急ぎたい</span>",
+        "content": "現状を診断し、最短ルートで体制と規程を整えます。" },
+      { "icon": "below/check.svg", "icon_alt": "チェックマーク",
+        "title": "運用が続かず、<span>形骸化する</span>",
+        "content": "実務に落ちる運用フロー・教育設計で継続性を担保。" }
+    ],
+    "solution": {
+      "title_ja": "規程整備だけでなく<br>“運用できる”体制を",
+      "content": "企業規模・フェーズに応じた実効性あるルールと運用を設計します。"
+    },
+    "features": [
+      { "title": "現状分析と<br>ギャップ特定", "content": "実務に即した優先順位で改善。",
+        "image": "common/service_img01.svg", "image_alt": "分析" },
+      { "title": "規程整備と教育", "content": "周知・研修までセットで伴走。",
+        "image": "below/service_img05.svg", "image_alt": "規程" },
+      { "title": "定着のための<br>運用設計", "content": "監査・点検の仕組み化。",
+        "image": "below/service_img06.svg", "image_alt": "運用" }
+    ],
+    "services": [
+      { "title": "体制設計", "image": "below/service_img07.svg", "image_alt": "体制", "list": ["責任者/管掌の定義","リスクアセスメント","対策方針"] },
+      { "title": "規程整備", "image": "below/service_img08.svg", "image_alt": "規程", "list": ["規程/手順書作成","配布・周知","改訂運用"] },
+      { "title": "運用伴走", "image": "below/service_img09.svg", "image_alt": "運用", "list": ["教育/研修","点検・是正","監査対応"] }
+    ]
+  }
+  

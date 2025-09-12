@@ -7,6 +7,13 @@
   }
 }
 
+.p-news__inner--single {
+  padding-top: rem(80);
+  @include mq(md) {
+    padding-top: rem(60);
+  }
+}
+
 .p-news__container {
   display: flex;
   gap: rem(100);
@@ -43,6 +50,7 @@
 
 .p-news__main-content--single {
   width: rem(712);
+  max-width: 100%;
 }
 
 .p-news__items {

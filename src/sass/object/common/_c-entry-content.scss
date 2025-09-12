@@ -1,7 +1,7 @@
 @use "global" as *;
 
 .c-entry-content {
-  line-height: 1.8;
+  line-height: 1.5;
   letter-spacing: 0.02em;
 
   @include mq("md") {
@@ -39,9 +39,8 @@
 }
 
 .c-entry-content h2 {
-  margin-top: rem(56);
-  border-bottom: 1px solid $blue;
-  font-size: rem(24);
+  margin-top: rem(80); // 基本は余白あり
+  font-size: rem(22);
   line-height: 1.4;
   position: relative;
   padding: rem(10) rem(24);
@@ -58,8 +57,18 @@
     left: 0;
   }
 
+  // 最初の h2 だけ margin-top を 0 に
+  &:first-of-type {
+    margin-top: 0;
+  }
+
   @include mq("md") {
-    margin-top: rem(32);
+    margin-top: rem(60);
+
+    &:first-of-type {
+      margin-top: 0; // SP でも最初は余白なし
+    }
+
     font-size: rem(18);
   }
 }
@@ -76,7 +85,7 @@
   font-size: rem(20);
   line-height: 1.4;
   padding-left: rem(16);
-  margin-top: rem(32);
+  margin-top: rem(80);
   position: relative;
   font-weight: 700;
 
@@ -91,18 +100,19 @@
   }
 
   @include mq("md") {
-    margin-top: rem(25);
-    font-size: rem(18);
+    margin-top: rem(60);
+    font-size: rem(16);
   }
 }
 
 .c-entry-content h4 {
-  margin-top: rem(50);
+  margin-top: rem(80);
   font-size: rem(18);
   font-weight: 700;
   line-height: 1.4;
   @include mq(md) {
     font-size: rem(16);
+    margin-top: rem(60);
   }
 }
 
@@ -136,6 +146,7 @@
   position: relative;
   z-index: 0;
   padding-left: 0.5em;
+  margin-top: rem(40);
 
   &::before {
     content: "";
@@ -153,6 +164,7 @@
 .c-entry-content h6 {
   font-size: rem(15);
   font-weight: 700;
+  margin-top: rem(40);
 }
 
 .c-entry-content blockquote {

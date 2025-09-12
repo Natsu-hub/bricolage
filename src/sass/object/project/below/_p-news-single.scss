@@ -56,9 +56,11 @@
 }
 
 .p-news-mv__title-ja {
-  font-size: rem(28);
+  font-size: rem(24);
   font-weight: 700;
   line-height: 1.4;
+  width: rem(900);
+  max-width: 100%;
   @include mq(md) {
     font-size: rem(20);
   }

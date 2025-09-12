@@ -19,7 +19,7 @@ get_header();
 
     <!-- p-news -->
     <section class="p-news">
-        <div class="p-news__inner l-inner">
+        <div class="p-news__inner p-news__inner--single l-inner">
             <div class="p-news__container p-news__container--single">
                 <div class="p-news__main-content p-news__main-content--single">
                     <?php if (have_posts()): while (have_posts()): the_post(); ?>
@@ -32,10 +32,6 @@ get_header();
                     'alt' => get_the_title(),
                     'loading' => 'lazy'
                 )); ?>
-                        </div>
-                        <?php else: ?>
-                        <div class="p-single-news__thumb">
-                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/common/no-img.png" alt="No image" width="800" height="450" loading="lazy">
                         </div>
                         <?php endif; ?>
 

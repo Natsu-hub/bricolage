@@ -12,11 +12,11 @@ export function mv() {
 
   const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
 
-  tl.to('.p-top-mv__en-text',       { autoAlpha: 1, y: 0, duration: 0.35 })
-    .to('.p-top-mv__title',     { autoAlpha: 1, y: 0, duration: 0.5 }, '-=0.05')
-    .to('.p-top-mv__sub-text',      { autoAlpha: 1, y: 0, duration: 0.35 }, '-=0.05')
-    .to('.p-top-mv__img',           { autoAlpha: 1, x: 0, duration: 0.55 }, '-=0.10')
-    .to('.p-top-mv__illustration',   { autoAlpha: 1, y: 0, duration: 0.45 }, '-=0.35');
+  tl.to('.p-top-mv__en-text',       { autoAlpha: 1, y: 0, duration: 1 })
+    .to('.p-top-mv__title',     { autoAlpha: 1, y: 0, duration: 1 }, '<')
+    .to('.p-top-mv__sub-text',      { autoAlpha: 1, y: 0, duration: 1 }, '<')
+    .to('.p-top-mv__img',           { autoAlpha: 1, x: 0, duration: 1 }, '+=0.5')
+    .to('.p-top-mv__illustration',   { autoAlpha: 1, y: 0, duration: 1 }, '<');
 
   // さらに全体を速くしたいときは倍率を上げる
   // tl.timeScale(1.2);

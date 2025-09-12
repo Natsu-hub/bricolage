@@ -1,36 +1,39 @@
 {
     "below_mv": {
       "en": "security",
-      "ja": "セキュリティ体制構築",
+      "ja": "セキュリティコンサルティング領域",
       "deco": "common/deco04.svg",
       "bg_title": "security",
       "img": "below/service_fv-img02.svg",
-      "img_alt": "セキュリティのイメージ"
+      "img_alt": "サービス紹介用イメージ（セキュリティ支援）"
     },
     "issues": [
       { "icon": "below/check.svg", "icon_alt": "チェックマーク",
-        "title": "ISMS / Pマーク取得を<span>急ぎたい</span>",
-        "content": "現状を診断し、最短ルートで体制と規程を整えます。" },
+        "title": "現状の課題が明確でなく、何から手をつければいいか<span>わからない</span>",
+        "content": "社内のセキュリティ体制がどの程度リスクを抱えているのか不明確で、何を優先的に対策すべきか判断できない。" },
       { "icon": "below/check.svg", "icon_alt": "チェックマーク",
-        "title": "運用が続かず、<span>形骸化する</span>",
-        "content": "実務に落ちる運用フロー・教育設計で継続性を担保。" }
+        "title": "セキュリティ専門人材が社内におらず、判断・対応に<span>不安がある</span>",
+        "content": "何をどこまでやれば良いのかわからず、情報漏洩や内部不正のリスクが残ったまま。" },
+      { "icon": "below/check.svg", "icon_alt": "チェックマーク",
+        "title": "取引先・顧客からのセキュリティ要求に<span>対応できていない</span>",
+        "content": "セキュリティチェックシートや監査対応に手間取り、商談機会を逃すリスクがある。" }
     ],
     "solution": {
-      "title_ja": "規程整備だけでなく<br>“運用できる”体制を",
-      "content": "企業規模・フェーズに応じた実効性あるルールと運用を設計します。"
+      "title_ja": "<span class=\"p-solution__title-small\">事業と業務に即した、<br>実行可能な</span>セキュリティ体制構築<span class=\"p-solution__title-small\">をご支援します</span>",
+      "content": "方針策定から運用ルールの整備、社員教育、ツール導入支援、監査対応まで一貫して伴走。<br>形だけではなく、“現場で活きるセキュリティ”を目指します。"
     },
     "features": [
-      { "title": "現状分析と<br>ギャップ特定", "content": "実務に即した優先順位で改善。",
-        "image": "common/service_img01.svg", "image_alt": "分析" },
-      { "title": "規程整備と教育", "content": "周知・研修までセットで伴走。",
-        "image": "below/service_img05.svg", "image_alt": "規程" },
-      { "title": "定着のための<br>運用設計", "content": "監査・点検の仕組み化。",
-        "image": "below/service_img06.svg", "image_alt": "運用" }
+      { "title": "経営と現場の両面から考える<br>実践的セキュリティ設計", "content": "単なる技術論や形式的な対策ではなく、事業継続・業務効率も考慮したセキュリティ施策を構築。",
+        "image": "common/service_img01.svg", "image_alt": "サービス紹介用イメージ（セキュリティ支援）" },
+      { "title": "ISMS・Pマークなどに基づく<br>規定取得支援にも対応", "content": "第三者監査や顧客監査に耐えうる体制を、標準規格ベースで整備。",
+        "image": "below/service_img05.svg", "image_alt": "サービス紹介用イメージ（セキュリティ支援）" },
+      { "title": "ツール導入だけで終わらない、<br>運用と教育まで支援", "content": "IT部門任せにせず、社員のリテラシー向上や業務プロセスの中への組み込みまで徹底支援。",
+        "image": "below/service_img06.svg", "image_alt": "サービス紹介用イメージ（セキュリティ支援）" }
     ],
     "services": [
-      { "title": "体制設計", "image": "below/service_img07.svg", "image_alt": "体制", "list": ["責任者/管掌の定義","リスクアセスメント","対策方針"] },
-      { "title": "規程整備", "image": "below/service_img08.svg", "image_alt": "規程", "list": ["規程/手順書作成","配布・周知","改訂運用"] },
-      { "title": "運用伴走", "image": "below/service_img09.svg", "image_alt": "運用", "list": ["教育/研修","点検・是正","監査対応"] }
+      { "title": "セキュリティポリシー策定<br \"u-inner\">・体制構築支援", "image": "below/service_img07.svg", "image_alt": "サービス紹介用イメージ（セキュリティ支援）", "list": ["現状分析","セキュリティ方針／基本方針の策定","情報資産管理・分類ルール整備","運用フロー／対応マニュアル作成"] },
+      { "title": "セキュリティ監査<br \"u-inner\">・リスクアセスメント支援", "image": "below/service_img08.svg", "image_alt": "サービス紹介用イメージ（セキュリティ支援）", "list": ["現状分析とリスク抽出","対策優先度の整理と改善計画立案","ISMS／Pマーク等のフレームワークに準拠した整備支援"] },
+      { "title": "セキュリティ運用<br \"u-inner\">・教育支援", "image": "below/service_img09.svg", "image_alt": "サービス紹介用イメージ（セキュリティ支援）", "list": ["社員向けセキュリティ研修","ツール（EDR, CASB, MDM等）導入支援","セキュリティ監査対応支援／代行"] }
     ]
   }
   

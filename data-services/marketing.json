@@ -5,71 +5,70 @@
       "deco": "common/deco04.svg",
       "bg_title": "marketing",
       "img": "below/service_fv-img02.svg",
-      "img_alt": "マーケティングのイメージ"
+      "img_alt": "サービス紹介用イメージ（マーケティング支援）"
     },
     "issues": [
       {
         "icon": "below/check.svg",
         "icon_alt": "チェックマーク",
-        "title": "施策はいろいろ試したが、<span>成果につながらない</span>",
-        "content": "現状分析を行い、KPI設計とチャネル最適化から見直します。"
+        "title": "マーケティング施策を試してみたが、<span>成果につながっていない</span>",
+        "content": "社内にマーケティング専任者がいない or 施策の一貫性がないため、売上やリード獲得に結びつかないケースが多発。"
       },
       {
         "icon": "below/check.svg",
         "icon_alt": "チェックマーク",
-        "title": "広告費を投下しているが、<span>リードの質が低い</span>",
-        "content": "ペルソナ設計やターゲティングを見直し、質の高いリード獲得を支援します。"
+        "title": "代理店や外注に任せているが、事業理解が浅く<span>ミスマッチが起きている</span>",
+        "content": "KPI設計や顧客理解が不十分なまま施策が進み、期待していた結果が得られない。"
       },
       {
         "icon": "below/check.svg",
         "icon_alt": "チェックマーク",
-        "title": "部門ごとに施策が分断されており、<span>全体最適ができていない</span>",
-        "content": "営業・CSを含めた全体設計に基づき、統合的なマーケティング施策を展開します。"
+        "title": "リードは取れているが、<span>商談化・受注率が上がらない</span>",
+        "content": "リードナーチャリングや営業連携が弱く、マーケ→営業のプロセスにギャップがある。"
       }
-    ]
-    ,
+    ],
     "solution": {
       "title_ja": "戦略立案<span class=\"p-solution__title-small\">から</span>実行支援<span class=\"p-solution__title-small\">まで</span><br>伴走型<span class=\"p-solution__title-small\">で</span>ご支援します",
       "content": "経営・営業視点を踏まえ、現場で成果が出るまで支援。事業全体の最大化を目的とします。"
     },
     "features": [
       {
-        "title": "テスト経営・営業視点に立った<br>マーケティング戦略",
-        "content": "売上やLTVにつながる設計を重視します。",
+        "title": "経営・営業視点に立った<br>マーケティング戦略",
+        "content": "施策をやることが目的にならない。売上やLTVにつながる戦略設計が強み。",
         "image": "common/service_img01.svg",
-        "image_alt": "戦略イラスト"
+        "image_alt": "サービス紹介用イメージ（マーケティング支援）"
       },
       {
-        "title": "実務まで担う<br>伴走型パートナー",
-        "content": "広告運用・コンテンツ制作・MA運用まで対応。",
+        "title": "実務も対応する<br>「伴走型」パートナー",
+        "content": "戦略を描くだけでなく、広告運用、コンテンツ制作、MA運用など実行支援までワンストップで提供。",
         "image": "below/service_img05.svg",
-        "image_alt": "伴走イラスト"
+        "image_alt": "サービス紹介用イメージ（マーケティング支援）"
       },
       {
-        "title": "定例MTG＋チャットで<br>継続改善",
-        "content": "スピード感を持って施策を回します。",
+        "title": "定例ミーティング<br>＋チャットツール等での並走支援",
+        "content": "現場と密に連携しながら、スピード感をもって改善提案・実装を継続。",
         "image": "below/service_img06.svg",
-        "image_alt": "定例イラスト"
+        "image_alt": "サービス紹介用イメージ（マーケティング支援）"
       }
     ],
     "services": [
       {
-        "title": "マーケティング戦略設計",
+        "title": "マーケティング<br \"u-inner\">戦略設計",
         "image": "below/service_img07.svg",
-        "image_alt": "戦略設計",
+        "image_alt": "サービス紹介用イメージ（マーケティング支援）",
         "list": ["ターゲット定義","カスタマージャーニー設計","KPI／KGI設計","チャネル戦略立案"]
       },
       {
         "title": "施策実行支援",
         "image": "below/service_img08.svg",
-        "image_alt": "施策実行",
+        "image_alt": "サービス紹介用イメージ（マーケティング支援）",
         "list": ["広告運用（Google/Yahoo/Meta/LinkedIn）","ホワイトペーパー／導入事例","ウェビナー企画・運営","MA／SFA設計・運用"]
       },
       {
         "title": "営業・商談フェーズ<br>連携支援",
         "image": "below/service_img09.svg",
-        "image_alt": "営業連携",
-        "list": ["営業KPI接続／定例運用","ナーチャリング設計","リード分析・スコアリング改善"]
+        "image_alt": "サービス紹介用イメージ（マーケティング支援）",
+        "list": ["営業チームとのKPI接続／定例実施","ナーチャリング設計と実装","リード分析とスコアリング改善"]
       }
     ]
   }

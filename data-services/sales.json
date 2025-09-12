@@ -5,7 +5,7 @@
       "deco": "common/deco04.svg",
       "bg_title": "sales",
       "img": "below/service_fv-img02.svg",
-      "img_alt": "セールスのイメージ"
+      "img_alt": "サービス紹介用イメージ（セールス支援）"
     },
     "issues": [
       { "icon": "below/check.svg", "icon_alt": "チェックマーク",
@@ -15,25 +15,25 @@
         "title": "営業メンバーの育成・マネジメントに<span>時間が割けない</span>",
         "content": "プレイヤー業務が優先され、営業戦略の見直しや再現性のあるプロセス設計ができていない。" },
         { "icon": "below/check.svg", "icon_alt": "チェックマーク",
-        "title": "トークが<span>各営業でバラバラ</span>",
+        "title": "提案資料・トークが<span>各営業でバラバラ</span>",
         "content": "商談の品質や訴求ポイントが統一されておらず、クロージングの成功率にムラがある。" }
     ],
     "solution": {
-      "title_ja": "型化とナレッジ共有で<br>商談の再現性を高める",
-      "content": "インサイド〜フィールドの連携、資料テンプレやQA整備で勝ち筋を強化。"
+      "title_ja": "<span class=\"p-solution__title-small\">セールス組織の立ち上げから</span><br><span class=\"p-solution__title-small\">成果創出まで</span><br>一貫してご支援<span class=\"p-solution__title-small\"></span>します",
+      "content": "インサイドセールスの構築・運用から、営業チームの動き方・商談設計、クロージング支援まで、実務に入りながら売上最大化を実現します。"
     },
     "features": [
-      { "title": "SFA/CRMを活用した<br>プロセス可視化", "content": "KPI接続とダッシュボードで状況把握を高速化。",
-        "image": "common/service_img01.svg", "image_alt": "SFA可視化" },
-      { "title": "提案の型化と<br>資料テンプレ整備", "content": "勝ち筋の“再現”を可能に。",
-        "image": "below/service_img05.svg", "image_alt": "資料整備" },
-      { "title": "マーケ連携で<br>高品質リード創出", "content": "MQL→SQLの歩留まりを改善。",
-        "image": "below/service_img06.svg", "image_alt": "連携" }
+      { "title": "実務経験者による<br>現場伴走型の営業支援", "content": "営業活動の属人化を防ぎ、型化・仕組み化された営業プロセスを構築。",
+        "image": "common/service_img01.svg", "image_alt": "サービス紹介用イメージ（セールス支援）" },
+      { "title": "インサイドセールス・<br>フィールドセールスの両軸を強化", "content": "リード獲得後の初動対応〜商談創出・クロージングまで、フェーズに応じて最適な体制を設計。",
+        "image": "below/service_img05.svg", "image_alt": "サービス紹介用イメージ（セールス支援）" },
+      { "title": "提案資料／スクリプトの整備と<br>ロールプレイング支援", "content": "誰でも一定品質の商談ができるよう、ナレッジの型化・仕組み化をサポート。",
+        "image": "below/service_img06.svg", "image_alt": "サービス紹介用イメージ（セールス支援）" }
     ],
     "services": [
-      { "title": "SFA導入・運用設計", "image": "below/service_img07.svg", "image_alt": "SFA", "list": ["要件定義","KPI設計","ダッシュボード構築","運用伴走"] },
-      { "title": "提案力強化", "image": "below/service_img08.svg", "image_alt": "提案", "list": ["ヒアリング設計","提案書テンプレ","ケースレビュー","ロープレ"] },
-      { "title": "マーケ連携", "image": "below/service_img09.svg", "image_alt": "連携", "list": ["MQL基準整備","SLA策定","ナーチャリング連携"] }
+      { "title": "営業組織構築<br \"u-inner\">・改善支援", "image": "below/service_img07.svg", "image_alt": "サービス紹介用イメージ（セールス支援）", "list": ["営業KPIの設計とモニタリング体制構築","営業会議の設計・ファシリテート支援","","営業メンバーの教育・オンボーディング整備"] },
+      { "title": "フィールドセールス<br>（商談）支援", "image": "below/service_img08.svg", "image_alt": "サービス紹介用イメージ（セールス支援）", "list": ["提案資料の最適化","営業トーク／トークスクリプトの整備","商談同席・ロールプレイング","クロージング力強化支援"] },
+      { "title": "インサイドセールス<br \"u-inner\">支援", "image": "below/service_img09.svg", "image_alt": "サービス紹介用イメージ（セールス支援）", "list": ["スクリプト作成","リード対応フロー設計","アポ獲得業務代行／支援","CTI/CRMツールの設計・導入支援"] }
     ]
   }
   

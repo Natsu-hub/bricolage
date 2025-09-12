@@ -38,6 +38,8 @@
   grid-template-columns: repeat(1, 1fr);
   gap: rem(60);
   margin-top: rem(60);
+  width: rem(1080);
+  max-width: 100%;
   @include mq(md) {
     margin-top: rem(48);
     gap: rem(54);
@@ -49,9 +51,10 @@
   background-color: $white;
   /* card-shadow */
   box-shadow: 0 0 rem(30) 0 rgba(6, 71, 148, 0.07);
-  padding: rem(43) rem(110);
+  padding: rem(43) calc((110 / 1440) * 100vw);
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: rem(60);
   position: relative;
   @include mq(md) {
@@ -118,18 +121,22 @@
   font-size: rem(24);
   font-weight: 700;
   line-height: 1.4;
+  white-space: nowrap;
   @include mq(md) {
+    white-space: initial;
     margin-top: rem(4);
     font-size: rem(20);
   }
 }
 
 .p-feature__item-img {
-  width: rem(380);
-  max-width: 100%;
+  width: calc((380 / 1400) * 100vw);
+  max-width: rem(380);
+  // flex: 1;
   @include mq(md) {
     margin-inline: auto;
     width: rem(255);
+    max-width: 100%;
     order: 3;
     margin-top: rem(14);
   }

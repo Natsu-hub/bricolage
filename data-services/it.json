@@ -1,36 +1,39 @@
 {
     "below_mv": {
-      "en": "it",
-      "ja": "IT実装・運用",
+      "en": "IT Deploy",
+      "ja": "IT・DXコンサルティング/導入支援",
       "deco": "common/deco04.svg",
-      "bg_title": "it",
+      "bg_title": "it deploy",
       "img": "below/service_fv-img02.svg",
-      "img_alt": "ITのイメージ"
+      "img_alt": "サービス紹介用イメージ（IT・DX支援）"
     },
     "issues": [
       { "icon": "below/check.svg", "icon_alt": "チェックマーク",
-        "title": "ツール導入が増え、<span>運用が複雑</span>",
-        "content": "要件整理し、ツール統合やデータ連携を設計します。" },
+        "title": "DXツールを導入したが、<span>現場に定着せず</span>使われていない",
+        "content": "現場業務との乖離や、導入時の目的が曖昧で、「入れただけ」で終わっている状態。" },
       { "icon": "below/check.svg", "icon_alt": "チェックマーク",
-        "title": "属人化で<span>引き継ぎが難しい</span>",
-        "content": "ドキュメント整備と運用ルールで標準化します。" }
+        "title": "どのツールが自社に合っているのか<span>判断できない</span>",
+        "content": "比較検討に時間がかかり、ITベンダーの提案が自社業務とフィットするか判断できない。" },
+        { "icon": "below/check.svg", "icon_alt": "チェックマーク",
+        "title": "社内にITに詳しい人材がいないため、<span>検討・推進が進まない</span>",
+        "content": "ツール導入プロジェクトが頓挫したり、システム部門の負荷が過大になる。" }
     ],
     "solution": {
-      "title_ja": "現場が回るITに<br>“ちょうど良い”設計を",
-      "content": "要件→設計→導入→運用まで伴走。過度な高度化は避け、効果に直結させます。"
+      "title_ja": "<span class=\"p-solution__title-small\">現場理解をベースにした、<br>実行可能な</span>IT・DX導入<span class=\"p-solution__title-small\">を支援します</span>",
+      "content": "目的整理からツール選定、導入・定着支援まで伴走。<br>現場の業務プロセスやユーザ視点に立って、\"使えるDX\"を実現します。"
     },
     "features": [
-      { "title": "要件定義から<br>導入・運用まで", "content": "過剰機能を避け、使える仕組みを。",
-        "image": "common/service_img01.svg", "image_alt": "要件定義" },
-      { "title": "データ連携と<br>業務プロセス整備", "content": "二重入力を削減し、整合性を担保。",
-        "image": "below/service_img05.svg", "image_alt": "連携" },
-      { "title": "ドキュメント・<br>ルール整備", "content": "属人化の解消と人の入れ替わりに強く。",
-        "image": "below/service_img06.svg", "image_alt": "標準化" }
+      { "title": "戦略と業務に即した<br>ツール選定／導入", "content": "流行りや表面的な機能比較ではなく、「業務をどう変えるか」に立脚した選定と提案。",
+        "image": "common/service_img01.svg", "image_alt": "サービス紹介用イメージ（IT・DX支援）" },
+      { "title": "ITに不慣れな組織でも<br>進められる伴走型支援", "content": "社内メンバーのスキルや体制に合わせ、無理なく推進できるスケジュールとサポート体制を設計。",
+        "image": "below/service_img05.svg", "image_alt": "サービス紹介用イメージ（IT・DX支援）" },
+      { "title": "導入後の定着化・<br>活用フェーズまでサポート", "content": "使い方マニュアルの整備や研修、業務フローとの統合まで、定着・成果創出をゴールに支援。",
+        "image": "below/service_img06.svg", "image_alt": "サービス紹介用イメージ（IT・DX支援）" }
     ],
     "services": [
-      { "title": "要件定義/設計", "image": "below/service_img07.svg", "image_alt": "設計", "list": ["業務フロー整理","システム要件定義","選定支援"] },
-      { "title": "導入・運用伴走", "image": "below/service_img08.svg", "image_alt": "導入", "list": ["初期設定","権限設計","運用ルール"] },
-      { "title": "データ連携", "image": "below/service_img09.svg", "image_alt": "連携", "list": ["ツール間連携","ETLの設計","メンテナンス"] }
+      { "title": "DX構想・課題整理支援", "image": "below/service_img07.svg", "image_alt": "サービス紹介用イメージ（IT・DX支援）", "list": ["業務フロー可視化と課題抽出","KPI／目的の明確化","導入プロジェクト体制設計"] },
+      { "title": "ツール選定・導入支援", "image": "below/service_img08.svg", "image_alt": "サービス紹介用イメージ（IT・DX支援）", "list": ["SFA／MA／CRM／グループウェア／RPAなどの選定支援","ベンダー比較・提案資料作成","要件定義・導入設計"] },
+      { "title": "定着化・活用支援", "image": "below/service_img09.svg", "image_alt": "サービス紹介用イメージ（IT・DX支援）", "list": ["操作マニュアル／研修資料の作成","社内説明会・勉強会の実施","活用状況のモニタリングと改善提案"] }
     ]
   }
   

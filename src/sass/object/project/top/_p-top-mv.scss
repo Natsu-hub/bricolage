@@ -19,9 +19,6 @@
 
   @include mq(md) {
     width: rem(74);
-    // top: 20%;
-    // display: flex;
-    // flex-direction: row-reverse;
   }
 
   @include mq("sm") {
@@ -30,8 +27,6 @@
 }
 
 .p-top-mv__title-box {
-  //   top: 50%;
-  //   white-space: nowrap;
   position: absolute;
   top: 50%;
   left: calc(50% - min(50vw, #{rem(600)}));
@@ -47,13 +42,6 @@
     transform: none;
     padding-top: rem(138);
     padding-inline: rem(20);
-    // top: 20%;
-    // display: flex;
-    // flex-direction: row-reverse;
-  }
-
-  @include mq("sm") {
-    // left: rem(22);
   }
 }
 

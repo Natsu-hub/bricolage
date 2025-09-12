@@ -20,7 +20,6 @@ $page_slug = $post->post_name;
                 <span class="c-below-mv__bg-title c-deco-title js-fade-in-right" lang="en">about</span>
             </div>
         </div>
-        </div>
     </section>
 
     <!-- p-business -->
@@ -30,8 +29,8 @@ $page_slug = $post->post_name;
                 <span class="c-title-en" lang="en">business</span>
                 <span class="c-title-ja">事業案内</span>
             </h2>
-            <ul class="p-business__items">
-                <li class="p-business__item">
+            <div class="p-business__items">
+                <div class="p-business__item">
                     <dl class="p-business__list">
                         <div class="p-business__list-row">
                             <dt class="p-business__list-title">会社名</dt>
@@ -58,8 +57,8 @@ $page_slug = $post->post_name;
                             <dd class="p-business__list-description">三井住友銀行、GMOあおぞらネット銀行</dd>
                         </div>
                     </dl>
-                </li>
-            </ul>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -72,12 +71,12 @@ $page_slug = $post->post_name;
             </h2>
             <!-- Google Mapの共有タグを埋め込む -->
             <div class="p-access__map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.6693509361767!2d139.73782217567594!3d35.66051727259394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bdecb913b5d%3A0xf582651d930e5526!2z6bq75biD5Y-w44OS44Or44K6IOajrkpQ44K_44Ov44O8!5e0!3m2!1sja!2sjp!4v1700948110431!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6482.975536393762!2d139.69986641144027!3d35.66498993075152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188ca60a6622fd%3A0x170f111b90f4eb15!2z44CSMTUwLTAwMDEg5p2x5Lqs6YO95riL6LC35Yy656We5a6u5YmN77yW5LiB55uu77yS77yT4oiS77yUIOahkemHjuODk-ODqyAyZg!5e0!3m2!1sja!2sjp!4v1757659401598!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <address class="p-access__text">〒150-0001<br>東京都渋谷区神宮前6丁目23番4号 桑野ビル2階
             </address>
             <div class="p-access__link">
-                <a class="p-access__map-link" href="http://" target="_blank" rel="noopener noreferrer">GoogleMap</a>
+                <a class="p-access__map-link" href="https://maps.app.goo.gl/MF1deybJ9x8wfm2u9" target="_blank" rel="noopener noreferrer">GoogleMap</a>
             </div>
         </div>
     </section>

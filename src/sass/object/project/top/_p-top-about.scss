@@ -9,15 +9,6 @@
 }
 
 .p-top-about__inner {
-  // max-width: rem(1180);
-  // width: 100%;
-  // margin-inline: auto;
-  // padding: 0 rem(30);
-
-  // @include mq("md") {
-  //   max-width: rem(600);
-  //   padding: 0 rem(20);
-  // }
   @include mq("sm") {
     padding-inline: 0;
   }
@@ -161,7 +152,4 @@
   @include mq(md) {
     width: rem(181);
   }
-}
-
-.c-deco-02 {
 }

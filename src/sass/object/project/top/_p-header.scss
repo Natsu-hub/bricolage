@@ -233,7 +233,6 @@
     width: rem(6);
     aspect-ratio: 6/8;
     object-fit: contain;
-    // height: rem(8);
     top: 50%;
     transform: translateY(-50%);
     left: rem(12);
@@ -247,20 +246,11 @@
 
 .p-header__hamburger-text:hover {
   background-color: $main-color;
-
-  &::after {
-    // background-color: white;
-    // right: rem(0);
-  }
 }
 
 .p-header__hamburger.is-open .p-header__hamburger-text {
   display: none;
 }
-
-// .p-header__hamburger.is-open {
-//   background-color: transparent;
-// }
 
 .p-header__hamburger span {
   position: relative;
@@ -313,13 +303,6 @@
   background: $bg-gradation;
 }
 
-.p-header__drawer-bg {
-  // background: rgba($main-color, 0.9);
-  // width: 100%;
-  // height: 100%;
-  // position: absolute;
-}
-
 .p-header__drawer-nav {
   position: relative;
   padding-inline: rem(18);
@@ -331,9 +314,6 @@
 
 .p-header__drawer::-webkit-scrollbar {
   display: none;
-}
-
-.p-header__drawer-items {
 }
 
 .p-header__drawer-item {
@@ -373,7 +353,7 @@
   color: $main-color;
   font-size: rem(16);
   font-family: $en-font-family02;
-  font-size: 600;
+  font-weight: 600;
   line-height: 1;
   letter-spacing: 0.08em;
 }
@@ -403,7 +383,7 @@
 
 .p-header__drawer-company {
   margin-top: rem(34);
-  font-size: 500;
+  font-weight: 500;
   line-height: 1.8;
 }
 .p-header__drawer-address {

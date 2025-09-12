@@ -137,14 +137,14 @@ $services = $data['services']  ?? [];
                             <?php echo sprintf('%02d', $i+1); ?>
                         </span>
                         <div class="p-feature__item-box">
-                            <h2 class="p-feature__item-title">
+                            <h3 class="p-feature__item-title">
                                 <span class="p-feature__item-title-number u-mobile">
                                     <?php echo sprintf('%02d', $i+1); ?>
                                 </span>
                                 <span class="p-feature__item-title-ja">
                                     <?php echo wp_kses( $f['title'] ?? '', $allowed ); ?>
                                 </span>
-                            </h2>
+                            </h3>
                             <?php if (!empty($f['content'])): ?>
                             <p class="p-feature__item-content">
                                 <?php echo esc_html($f['content']); ?>
@@ -179,9 +179,9 @@ $services = $data['services']  ?? [];
                     <img class="p-service-detail__item-img" src="<?php echo $img($s['image']); ?>" alt="<?php echo esc_attr($s['image_alt'] ?? ''); ?>" width="164" height="123" loading="lazy">
                     <?php endif; ?>
 
-                    <h2 class="p-service-detail__item-title">
+                    <h3 class="p-service-detail__item-title">
                         <?php echo wp_kses( $s['title'] ?? '', $allowed ); ?>
-                    </h2>
+                    </h3>
 
                     <?php if (!empty($s['list']) && is_array($s['list'])): ?>
                     <ul class="p-service-detail__item-box">

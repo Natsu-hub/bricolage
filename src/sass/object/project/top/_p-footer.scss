@@ -42,8 +42,6 @@
     align-items: start;
   }
 }
-.p-footer__items {
-}
 
 .p-footer__info {
   width: rem(600);
@@ -51,9 +49,6 @@
   @include mq(md) {
     width: 100%;
   }
-}
-
-.p-footer__company {
 }
 
 .p-footer__company img {
@@ -104,11 +99,6 @@
     margin-top: rem(60);
   }
 }
-.p-footer__nav-items {
-}
-
-.p-footer__nav-item {
-}
 
 .p-footer__nav-link {
   display: inline-block;
@@ -128,10 +118,6 @@
     bottom: 0;
     background: $white;
   }
-}
-
-.p-footer__nav-item:first-of-type .p-footer__nav-link {
-  // padding-left: 0;
 }
 
 .p-footer__nav-privacy {

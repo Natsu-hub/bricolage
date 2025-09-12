@@ -24,9 +24,6 @@
   font-size: rem(20);
   font-weight: 700;
   font-family: $en-font-family;
-
-  @include mq(md) {
-  }
 }
 
 .page-numbers img {

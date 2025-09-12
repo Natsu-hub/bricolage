@@ -3,9 +3,6 @@
 .c-entry-content {
   line-height: 1.5;
   letter-spacing: 0.02em;
-
-  @include mq("md") {
-  }
 }
 
 .c-entry-content a {

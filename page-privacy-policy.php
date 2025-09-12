@@ -39,21 +39,25 @@ $page_slug = $post->post_name;
                 <h2 class="p-privacy-policy__head">2. 個人情報の利用目的</h2>
                 <p class="p-privacy-policy__text">当社は、お客様から個人情報をご提供頂く場合、予め個人情報の利用目的を明示し、その利用目的の範囲内で利用します。予め明示した利用目的の範囲を超えて、お客様の個人情報を利用する必要が生じた場合は、お客様にその旨をご連絡し、お客様の同意を頂いた上で利用します。当社が保有する個人情報の利用目的は下記の通りです。</p>
                 <ul class="p-privacy-policy__numbers c-common-page__counts">
-                    <li>お客様に関する個人情報</li>
-                    <ul class="p-privacy-policy__numbers02 c-common-page__list">
-                        <li>お客様との商談、お打ち合わせ等</li>
-                        <li>商品、資料等の発送</li>
-                        <li>サービス、イベント等のご案内送付</li>
-                        <li>顧客サポート、メンテナンスの提供</li>
-                        <li>お問い合わせ・ご相談への対応</li>
-                        <li>サービス開発、アンケート調査実施、モニター等の実施</li>
-                        <li>契約の履行</li>
-                    </ul>
-                    <li>採用応募者に関する個人情報</li>
-                    <ul class="p-privacy-policy__numbers02 c-common-page__list">
-                        <li>採用応募者（インターンシップを含む）への採用情報等の提供・連絡</li>
-                        <li>当社での採用業務管理</li>
-                    </ul>
+                    <li>
+                        お客様に関する個人情報
+                        <ul class="p-privacy-policy__numbers02 c-common-page__list">
+                            <li>お客様との商談、お打ち合わせ等</li>
+                            <li>商品、資料等の発送</li>
+                            <li>サービス、イベント等のご案内送付</li>
+                            <li>顧客サポート、メンテナンスの提供</li>
+                            <li>お問い合わせ・ご相談への対応</li>
+                            <li>サービス開発、アンケート調査実施、モニター等の実施</li>
+                            <li>契約の履行</li>
+                        </ul>
+                    </li>
+                    <li>
+                        採用応募者に関する個人情報
+                        <ul class="p-privacy-policy__numbers02 c-common-page__list">
+                            <li>採用応募者（インターンシップを含む）への採用情報等の提供・連絡</li>
+                            <li>当社での採用業務管理</li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <div class="p-privacy-policy__box">

@@ -102,6 +102,32 @@ add_filter('template_include', function ($template) {
   return $template;
 }, 20);
 
+/* =========================
+ * カスタム投稿/記事詳細のパーマリンク
+ * ========================= */
+add_filter('post_type_link', 'custom_post_link', 1, 2);
+function custom_post_link($link, $post) {
+    $post_types = array('column', 'news');
+    if (in_array($post->post_type, $post_types)) {
+        // カスタム投稿名が "column"、"news" の投稿のパーマリンクを "/{post_type}/{投稿ID}/" の形に書き換え
+        return home_url('/' . $post->post_type . '/' . $post->ID);
+    } else {
+        return $link;
+    }
+}
+
+// 書き換えたパーマリンクに対応したリライトルールを追加
+add_filter('rewrite_rules_array', 'custom_post_link_rewrite');
+function custom_post_link_rewrite($rules) {
+    $rewrite_rules = array();
+    $post_types = array('column', 'news');
+    foreach ($post_types as $post_type) {
+        $rewrite_rules[$post_type . '/([0-9]+)/?$'] = 'index.php?post_type=' . $post_type . '&p=$matches[1]';
+    }
+    return $rewrite_rules + $rules;
+}
+
+
 
 
 /* =========================

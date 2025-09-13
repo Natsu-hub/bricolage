@@ -58,7 +58,7 @@ function animation() {
         ease: "power4.out",
         scrollTrigger: {
           trigger: element,
-          start: "top 60%",
+          start: "top 70%",
           toggleActions: 'play none none reverse'
           // markers: true,
         }

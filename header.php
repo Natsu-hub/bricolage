@@ -21,56 +21,65 @@
         <header class="p-header l-header js-header">
             <div class="p-header__inner">
                 <?php if ( is_front_page() ) : ?>
-                <div class="p-header__logo">ブリコラージュ合同会社
+                <div class="p-header__logo p-header__logo--top">
                     <a href="#body"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/common/logo_black.svg" alt="ブリコラージュ合同会社のロゴ" width="182" height="80" loading="lazy">
                     </a>
                 </div>
                 <?php else : ?>
-                <div class="p-header__logo">ブリコラージュ合同会社
+                <div class="p-header__logo">
                     <a href="<?php echo HOME_URL; ?>"> <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/common/logo_black.svg" alt="ブリコラージュ合同会社のロゴ" width="182" height="80" loading="lazy">
                     </a>
                 </div>
                 <?php endif; ?>
                 <div class="p-header__nav-lists">
-                    <nav class="p-header__nav">
-                        <ul class="p-header__nav-items">
-                            <li class="p-header__nav-item">
-                                <a class="p-header__nav-link <?php if (is_front_page()): ?>current<?php endif; ?>" href="<?php echo HOME_URL; ?>"><span class="p-header__nav-deco">トップ</span></a>
-                            </li>
-                            <li class="p-header__nav-item p-header__item--mega-menu">
-                                <a class="p-header__nav-link <?php if (is_page("service")): ?>current<?php endif; ?>" href="<?php echo SERVICE_URL; ?>"><span class="p-header__nav-deco">事業案内</span></a>
-                                <div class="p-p-header__sublist-wrap">
-                                    <ul class="p-header__sublist">
-                                        <li><a href="<?php echo MARKETING_URL; ?>">マーケティング領域</a></li>
-                                        <li><a href="<?php echo SALES_URL; ?>">セールス領域</a></li>
-                                        <li><a href="<?php echo IT_URL; ?>">IT・DXコンサルティング/導入支援</a></li>
-                                        <li><a href="<?php echo SECURITY_URL; ?>">セキュリティコンサルティング</a></li>
-                                    </ul>
+                    <?php if ( is_front_page() ) : ?>
+                    <nav class="p-header__nav p-header__nav--top">
+                        <?php else : ?>
+                        <nav class="p-header__nav">
+                            <?php endif; ?>
+                            <ul class="p-header__nav-items">
+                                <li class="p-header__nav-item">
+                                    <a class="p-header__nav-link <?php if (is_front_page()): ?>current<?php endif; ?>" href="<?php echo HOME_URL; ?>"><span class="p-header__nav-deco">トップ</span></a>
+                                </li>
+                                <li class="p-header__nav-item p-header__item--mega-menu">
+                                    <a class="p-header__nav-link <?php if (is_page("service")): ?>current<?php endif; ?>" href="<?php echo SERVICE_URL; ?>"><span class="p-header__nav-deco">事業案内</span></a>
+                                    <div class="p-p-header__sublist-wrap">
+                                        <ul class="p-header__sublist">
+                                            <li><a href="<?php echo MARKETING_URL; ?>">マーケティング領域</a></li>
+                                            <li><a href="<?php echo SALES_URL; ?>">セールス領域</a></li>
+                                            <li><a href="<?php echo IT_URL; ?>">IT・DXコンサルティング/導入支援</a></li>
+                                            <li><a href="<?php echo SECURITY_URL; ?>">セキュリティコンサルティング</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="p-header__nav-item">
+                                    <a class="p-header__nav-link <?php if (is_post_type_archive("news") || is_singular("news")): ?>current<?php endif; ?>" href="<?php echo NEWS_URL; ?>"><span class="p-header__nav-deco">ニュース</span></a>
+                                </li>
+                                <li class="p-header__nav-item">
+                                    <a class="p-header__nav-link <?php if (is_post_type_archive("column") || is_singular("column")): ?>current<?php endif; ?>" href="<?php echo COLUMN_URL; ?>"><span class="p-header__nav-deco">コラム</span></a>
+                                </li>
+                                <li class="p-header__nav-item">
+                                    <a class="p-header__nav-link <?php if (is_page("company")): ?>current<?php endif; ?>" href="<?php echo ABOUT_URL; ?>"><span class="p-header__nav-deco">会社紹介</span></a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <?php if ( is_front_page() ) : ?>
+                        <nav class="p-header__nav p-header__nav-contact--top">
+                            <?php else : ?>
+                            <nav class="p-header__nav-contact">
+                                <?php endif; ?>
+                                <!-- <nav class="p-header__nav-contact"> -->
+                                <div class="p-header__nav-contact-items">
+                                    <div class="p-header__nav-contact-item">
+                                        <a class="p-header__nav-contact-item c-btn-contact" href="<?php echo CONTACT_URL; ?>"><span>お問い合わせ</span></a>
+                                    </div>
                                 </div>
-                            </li>
-                            <li class="p-header__nav-item">
-                                <a class="p-header__nav-link <?php if (is_post_type_archive("news") || is_singular("news")): ?>current<?php endif; ?>" href="<?php echo NEWS_URL; ?>"><span class="p-header__nav-deco">ニュース</span></a>
-                            </li>
-                            <li class="p-header__nav-item">
-                                <a class="p-header__nav-link <?php if (is_post_type_archive("column") || is_singular("column")): ?>current<?php endif; ?>" href="<?php echo COLUMN_URL; ?>"><span class="p-header__nav-deco">コラム</span></a>
-                            </li>
-                            <li class="p-header__nav-item">
-                                <a class="p-header__nav-link <?php if (is_page("company")): ?>current<?php endif; ?>" href="<?php echo ABOUT_URL; ?>"><span class="p-header__nav-deco">会社紹介</span></a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <nav class="p-header__nav-contact">
-                        <div class="p-header__nav-contact-items">
-                            <div class="p-header__nav-contact-item">
-                                <a class="p-header__nav-contact-item c-btn-contact" href="<?php echo CONTACT_URL; ?>"><span>お問い合わせ</span></a>
-                            </div>
-                        </div>
-                    </nav>
-                    <button class="p-header__hamburger js-hamburger u-mobile">
-                        <p class="p-header__hamburger-text">menu</p>
-                        <span></span>
-                        <span></span>
-                    </button>
+                            </nav>
+                            <button class="p-header__hamburger js-hamburger u-mobile">
+                                <p class="p-header__hamburger-text">menu</p>
+                                <span></span>
+                                <span></span>
+                            </button>
                 </div>
                 <div class="p-header__drawer js-drawer">
                     <div class="p-header__drawer-bg js-drawer-overlay">

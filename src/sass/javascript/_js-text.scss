@@ -1,15 +1,14 @@
 @use "global" as *;
 
 .js-text-effect {
-    overflow: hidden;
-    line-height: 1;
-
+  overflow: hidden;
+  line-height: 1.3;
 }
 
 .js-text-effect span {
-    display: inline-block; //必須
-    opacity: 0;
-    visibility: hidden;
-    // transform: translateY(100%); //下から出現
-    // transform: rotateY(90deg); //回転
+  display: inline-block; //必須
+  opacity: 0;
+  visibility: hidden;
+  // transform: translateY(100%); //下から出現
+  // transform: rotateY(90deg); //回転
 }

@@ -26,10 +26,35 @@ export function animation() {
             trigger: element,
             start: "top 80%",
             toggleActions: 'play none none reverse',
+            // markers: true,
           },
         }
       );
     });
+
+        // フェードインアニメーションセクション
+        const fadeInSectionElements = document.querySelectorAll(".js-fade-in-section");
+        fadeInSectionElements.forEach((element) => {
+          gsap.fromTo(
+            element,
+            {
+              autoAlpha: 0,
+              y: 20,
+            },
+            {
+              autoAlpha: 1,
+              y: 0,
+              duration: 1.2,
+              ease: "power4.out",
+              scrollTrigger: {
+                trigger: element,
+                start: "top 60%",
+                toggleActions: 'play none none reverse',
+                // markers: true,
+              },
+            }
+          );
+        });
 
     // フェードインアニメーション02
     const fadeIn02Elements = document.querySelectorAll(".js-fadeIn");
@@ -67,6 +92,7 @@ export function animation() {
           scrollTrigger: {
             trigger: element, // トリガーとなる要素を指定
             start: "top 70%", // スクロール開始位置を指定
+            toggleActions: 'play none none reverse',
             //markers: true,
           },
         }
@@ -89,6 +115,7 @@ export function animation() {
           scrollTrigger: {
             trigger: element, // トリガーとなる要素を指定
             start: "top 70%", // スクロール開始位置を指定
+            toggleActions: 'play none none reverse',
             // markers: true,
           },
         }

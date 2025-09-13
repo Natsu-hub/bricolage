@@ -13,10 +13,10 @@ get_header(); ?>
             <p class="p-top-mv__en-text" lang="en">One Stop. Full Support.
             </p>
             <h1 class="p-top-mv__title" aria-label="ビジネスの成長に伴走する ワンストップ パートナー">
-                <span class="p-top-mv__title-top" aria-hidden="true">
+                <span class="p-top-mv__title-top js-text-effect js-splitText" aria-hidden="true">
                     ビジネスの成長に伴走する
                 </span>
-                <span class="p-top-mv__title-bottom" aria-hidden="true">
+                <span class="p-top-mv__title-bottom js-text-effect js-splitText" aria-hidden="true">
                     ワンストップ<br class="u-sm">パートナー
                 </span>
             </h1>
@@ -86,7 +86,7 @@ get_header(); ?>
                     <p class="p-top-service__title-message">組織のフェーズや商材に合わせた幅広い事業分野での<br class="u-desktop">
                         サポートを提供しています。</p>
                 </div>
-                <ol class="p-top-service__items">
+                <ol class="p-top-service__items js-fade-in">
                     <li class="p-top-service__item">
                         <div class="p-top-service__item-box">
                             <h3 class="p-top-service__item-title">
@@ -140,7 +140,7 @@ get_header(); ?>
     </section>
 
     <!-- p-top-news -->
-    <section class="p-top-news">
+    <section class="p-top-news js-fade-in-section">
         <div class="p-top-news__inner l-inner">
             <div class="p-top-news__item">
                 <h2 class="p-top-news__title c-title">
@@ -194,7 +194,7 @@ get_header(); ?>
     </section>
 
     <!-- p-top-column -->
-    <section class="p-top-column">
+    <section class="p-top-column js-fade-in">
         <img class="p-top-column__deco" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/common/news_img01.svg" alt="" width="256" height="165" loading="lazy">
         <div class="p-top-column__inner l-inner">
 

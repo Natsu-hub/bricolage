@@ -503,7 +503,7 @@ th {
 }
 
 .js-text-effect {
-	line-height: 1;
+	line-height: 1.3;
 	overflow: hidden;
 }
 
@@ -675,7 +675,8 @@ th {
 
 .l-header {
 	left: 0;
-	position: fixed;
+	position: -webkit-sticky;
+	position: sticky;
 	right: 0;
 	top: 0;
 	z-index: 40;
@@ -3331,6 +3332,7 @@ th {
 .p-top-mv__title {
 	font-weight: 800;
 	letter-spacing: 0.2em;
+	line-height: 1.3;
 	margin-top: 1.25rem;
 }
 
@@ -3341,7 +3343,7 @@ th {
 .p-top-mv__title-bottom {
 	color: #418ee8;
 	font-size: 2.5rem;
-	margin-top: 1rem;
+	margin-top: 0.3125rem;
 }
 
 .p-top-mv__sub-text {
@@ -4827,7 +4829,7 @@ body {
 }
 
 .p-top-mv__title {
-	margin-top: 0.6875rem;
+	margin-top: 0.9375rem;
 }
 
 .p-top-mv__title-top {
@@ -4837,12 +4839,12 @@ body {
 .p-top-mv__title-bottom {
 	font-size: 2.0625rem;
 	line-height: 1.3;
-	margin-top: 0.5625rem;
+	margin-top: 0.3125rem;
 }
 
 .p-top-mv__sub-text {
 	font-size: 0.875rem;
-	margin-top: 0.625rem;
+	margin-top: 0.75rem;
 }
 
 .p-top-mv__img {

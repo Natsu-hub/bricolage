@@ -32,12 +32,13 @@
                 </div>
                 <?php endif; ?>
                 <div class="p-header__nav-lists">
-                    <?php if ( is_front_page() ) : ?>
-                    <nav class="p-header__nav p-header__nav--top">
-                        <?php else : ?>
-                        <nav class="p-header__nav">
-                            <?php endif; ?>
+                    <nav class="p-header__nav">
+                        <?php if ( is_front_page() ) : ?>
+                        <ul class="p-header__nav-items p-header__nav-items--top">
+                            <?php else : ?>
                             <ul class="p-header__nav-items">
+                                <?php endif; ?>
+                                <!-- <ul class="p-header__nav-items"> -->
                                 <li class="p-header__nav-item">
                                     <a class="p-header__nav-link <?php if (is_front_page()): ?>current<?php endif; ?>" href="<?php echo HOME_URL; ?>"><span class="p-header__nav-deco">トップ</span></a>
                                 </li>
@@ -62,24 +63,19 @@
                                     <a class="p-header__nav-link <?php if (is_page("company")): ?>current<?php endif; ?>" href="<?php echo ABOUT_URL; ?>"><span class="p-header__nav-deco">会社紹介</span></a>
                                 </li>
                             </ul>
-                        </nav>
-                        <?php if ( is_front_page() ) : ?>
-                        <nav class="p-header__nav p-header__nav-contact--top">
-                            <?php else : ?>
-                            <nav class="p-header__nav-contact">
-                                <?php endif; ?>
-                                <!-- <nav class="p-header__nav-contact"> -->
-                                <div class="p-header__nav-contact-items">
-                                    <div class="p-header__nav-contact-item">
-                                        <a class="p-header__nav-contact-item c-btn-contact" href="<?php echo CONTACT_URL; ?>"><span>お問い合わせ</span></a>
-                                    </div>
-                                </div>
-                            </nav>
-                            <button class="p-header__hamburger js-hamburger u-mobile">
-                                <p class="p-header__hamburger-text">menu</p>
-                                <span></span>
-                                <span></span>
-                            </button>
+                    </nav>
+                    <?php if ( is_front_page() ) : ?>
+                    <div class="p-header__nav-contact p-header__nav-contact--top">
+                        <?php else : ?>
+                        <ul class="p-header__nav-contact">
+                            <?php endif; ?>
+                            <a class="p-header__nav-contact-item c-btn-contact" href="<?php echo CONTACT_URL; ?>"><span>お問い合わせ</span></a>
+                    </div>
+                    <button class="p-header__hamburger js-hamburger u-mobile">
+                        <p class="p-header__hamburger-text">menu</p>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
                 <div class="p-header__drawer js-drawer">
                     <div class="p-header__drawer-bg js-drawer-overlay">

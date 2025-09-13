@@ -556,12 +556,7 @@ function mv() {
   gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.set('.p-top-mv__illustration', {
     autoAlpha: 0
   });
-  gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.set('.p-header__logo--top', {
-    autoAlpha: 0,
-    y: -20,
-    X: 0
-  });
-  gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.set('.p-header__nav--top', {
+  gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.set('.p-header__nav-items--top', {
     autoAlpha: 0,
     y: -20,
     X: 0
@@ -599,11 +594,7 @@ function mv() {
     autoAlpha: 1,
     x: 0,
     duration: 0.8
-  }, 'mediaIn').to('.p-header__logo--top', {
-    autoAlpha: 1,
-    y: 0,
-    duration: 0.8
-  }, 'mediaIn').to('.p-header__nav--top', {
+  }, 'mediaIn').to('.p-header__nav-items--top', {
     autoAlpha: 1,
     y: 0,
     duration: 0.8

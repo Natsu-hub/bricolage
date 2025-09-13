@@ -81,7 +81,7 @@
   width: rem(469);
   max-width: 100%;
   height: rem(480);
-  padding-top: rem(50);
+  padding-top: rem(15);
   @include mq(md) {
     width: rem(355);
     padding-left: rem(20);
@@ -91,7 +91,7 @@
 }
 
 .p-top-about__deco-title {
-  top: rem(-85);
+  top: rem(-125);
   left: rem(-260);
   text-transform: uppercase;
   @include mq(md) {

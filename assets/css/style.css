@@ -675,11 +675,10 @@ th {
 
 .l-header {
 	left: 0;
-	position: -webkit-sticky;
-	position: sticky;
+	position: fixed;
 	right: 0;
 	top: 0;
-	z-index: 40;
+	z-index: 1035;
 }
 
 .l-inner {
@@ -813,10 +812,13 @@ th {
 	display: -ms-flexbox;
 	display: flex;
 	font-family: "Poppins", sans-serif;
+	font-size: 1.125rem;
+	font-weight: 700;
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
 	    -ms-flex-pack: center;
 	        justify-content: center;
+	letter-spacing: 0.2em;
 	max-width: 100%;
 	padding: 1.1875rem;
 	-webkit-transition: all 0.3s ease-out 0s;
@@ -2677,6 +2679,7 @@ th {
 	-webkit-justify-content: space-between;
 	    -ms-flex-pack: justify;
 	        justify-content: space-between;
+	margin-left: auto;
 }
 
 .p-header__nav {
@@ -2792,6 +2795,23 @@ th {
 	white-space: nowrap;
 }
 
+.p-header__nav-contact {
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	height: inherit;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	margin-left: 1.25rem;
+}
+
 .p-header__nav-contact-item {
 	-webkit-box-align: center;
 	-webkit-align-items: center;
@@ -2811,23 +2831,6 @@ th {
 
 .p-header__nav-link.current {
 	color: #37a9e6;
-}
-
-.p-header__nav-contact {
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	    -ms-flex-align: center;
-	        align-items: center;
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	height: inherit;
-	-webkit-box-pack: center;
-	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
-	margin-left: 1.875rem;
 }
 
 /* ドロワーメニューが開いた時のスタイル */
@@ -3172,7 +3175,7 @@ th {
 .p-top-about__img-box {
 	height: 30rem;
 	max-width: 100%;
-	padding-top: 3.125rem;
+	padding-top: 0.9375rem;
 	position: relative;
 	width: 29.3125rem;
 }
@@ -3180,7 +3183,7 @@ th {
 .p-top-about__deco-title {
 	left: -16.25rem;
 	text-transform: uppercase;
-	top: -5.3125rem;
+	top: -7.8125rem;
 }
 
 .p-top-about__img-top {
@@ -3501,7 +3504,7 @@ th {
 
 .p-top-service__deco-title {
 	right: -13.75rem;
-	top: -5.625rem;
+	top: -6.875rem;
 	z-index: -1;
 }
 
@@ -3587,7 +3590,7 @@ th {
 
 .p-top-service__item-img {
 	max-width: 100%;
-	width: 12.5rem;
+	width: 42.7927927928%;
 }
 
 .p-top-service__btn {

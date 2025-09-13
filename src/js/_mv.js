@@ -7,8 +7,7 @@ export function mv() {
   gsap.set(['.p-top-mv__en-text', '.p-top-mv__sub-text'], { autoAlpha: 0,y: 0 });
   gsap.set('.p-top-mv__img', { autoAlpha: 0, x: 15 });
   gsap.set('.p-top-mv__illustration', { autoAlpha: 0 });
-  gsap.set('.p-header__logo--top', { autoAlpha: 0, y: -20, X:0 }); 
-  gsap.set('.p-header__nav--top', { autoAlpha: 0, y: -20, X:0 }); 
+  gsap.set('.p-header__nav-items--top', { autoAlpha: 0, y: -20, X:0 }); 
   gsap.set('.p-header__nav-contact--top', { autoAlpha: 0, y: -20, X:0 }); 
 
   const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
@@ -23,8 +22,7 @@ export function mv() {
     // 3) 画像と同時にヘッダーも出す（同一ラベルで同期）
     .addLabel('mediaIn', '+=0.05')
     .to('.p-top-mv__img', { autoAlpha: 1, x: 0, duration: 0.8 }, 'mediaIn')
-    .to('.p-header__logo--top', { autoAlpha: 1, y: 0, duration: 0.8 }, 'mediaIn')
-    .to('.p-header__nav--top', { autoAlpha: 1, y: 0, duration: 0.8 }, 'mediaIn')
+    .to('.p-header__nav-items--top', { autoAlpha: 1, y: 0, duration: 0.8 }, 'mediaIn')
     .to('.p-header__nav-contact--top', { autoAlpha: 1, y: 0, duration: 0.8 }, 'mediaIn')
 
     // 4) イラストは画像と同時（必要なら 'mediaIn+=0.1' などで少し遅らせ可）

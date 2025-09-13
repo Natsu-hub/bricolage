@@ -47,7 +47,7 @@
 }
 
 .p-top-service__deco-title {
-  top: rem(-90);
+  top: rem(-110);
   right: rem(-220);
   z-index: -1;
   @include mq(md) {
@@ -125,8 +125,9 @@
 }
 
 .p-top-service__item-img {
-  width: rem(200);
+  // width: rem(200);
   max-width: 100%;
+  width: calc(190 / 444) * 100%;
   @include mq(md) {
     width: rem(255);
     margin-inline: auto;

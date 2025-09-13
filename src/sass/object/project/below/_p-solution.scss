@@ -34,7 +34,7 @@
 }
 
 .p-solution__title-ja {
-  font-size: rem(35);
+  font-size: rem(34);
   line-height: 1.5;
   font-weight: 700;
   text-align: center;
@@ -44,7 +44,7 @@
 }
 
 .p-solution__title-small {
-  font-size: rem(30);
+  font-size: rem(28);
   @include mq(md) {
     font-size: rem(22);
   }

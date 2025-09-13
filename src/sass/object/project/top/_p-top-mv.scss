@@ -38,6 +38,8 @@
   }
 
   @include mq(md) {
+    max-width: rem(600);
+    margin-inline: auto;
     position: static;
     transform: none;
     padding-top: rem(138);

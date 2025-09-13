@@ -22,7 +22,7 @@
   @media (max-width: 500px) {
     background: url("../../assets/images/common/footer_bg-sp.png") no-repeat
       center center / cover;
-    border-radius: 0;
+    border-radius: 0 rem(160) rem(160) 0;
   }
 }
 

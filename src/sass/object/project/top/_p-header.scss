@@ -306,6 +306,8 @@
 .p-header__drawer-nav {
   position: relative;
   padding-inline: rem(18);
+  max-width: rem(500);
+  margin-inline: auto;
 }
 
 .p-header__drawer.is-open {

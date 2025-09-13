@@ -17,7 +17,7 @@ get_header(); ?>
                     ビジネスの成長に伴走する
                 </span>
                 <span class="p-top-mv__title-bottom" aria-hidden="true">
-                    ワンストップ<br class="u-mobile">パートナー
+                    ワンストップ<br class="u-sm">パートナー
                 </span>
             </h1>
             <p class="p-top-mv__sub-text">マーケティング〜営業、セキュリティまで、<br>
@@ -228,9 +228,9 @@ get_header(); ?>
             $topic_terms = get_the_terms( get_the_ID(), 'topic' );
             $topic_name  = ( $topic_terms && ! is_wp_error( $topic_terms ) ) ? $topic_terms[0]->name : '';
         ?>
-                    <li class="p-top-column__card c-news-card">
-                        <a href="<?php the_permalink(); ?>" class="c-news-card__link">
-                            <div class="c-news-card__img">
+                    <li class="p-top-column__card c-column-card">
+                        <a href="<?php the_permalink(); ?>" class="c-column-card__link">
+                            <div class="c-column-card__img">
                                 <?php if ( has_post_thumbnail() ) : the_post_thumbnail('large'); ?>
                                 <?php else : ?>
                                 <picture>
@@ -239,16 +239,16 @@ get_header(); ?>
                                 </picture>
                                 <?php endif; ?>
                             </div>
-                            <div class="c-news-card__content">
-                                <div class="c-news-card__label">
-                                    <time class="c-news-card__date" datetime="<?php echo esc_attr( get_the_date('c') ); ?>">
+                            <div class="c-column-card__content">
+                                <div class="c-column-card__label">
+                                    <time class="c-column-card__date" datetime="<?php echo esc_attr( get_the_date('c') ); ?>">
                                         <?php echo esc_html( get_the_date('Y.m.d') ); ?>
                                     </time>
                                     <?php if ( $topic_name ) : ?>
-                                    <span class="c-news-card__category"><?php echo esc_html( $topic_name ); ?></span>
+                                    <span class="c-column-card__category"><?php echo esc_html( $topic_name ); ?></span>
                                     <?php endif; ?>
                                 </div>
-                                <div class="c-news-card__title"><?php the_title(); ?></div>
+                                <div class="c-column-card__title"><?php the_title(); ?></div>
                             </div>
                         </a>
                     </li>

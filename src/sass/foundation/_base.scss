@@ -73,9 +73,21 @@ body {
   letter-spacing: 0.02em;
   font-weight: 400;
   line-height: 1.8;
+  opacity: 0;
 
   @include mq(md) {
     min-height: 100svh;
+  }
+}
+
+/* ページ離脱トランジション */
+body.is-leaving {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  body.is-leaving {
+    transition: none;
   }
 }
 

@@ -1,7 +1,7 @@
 @use "global" as *;
 
 .l-header {
-  z-index: $layer-header + 1000;
+  z-index: $layer-header + 5;
   position: fixed;
   top: 0;
   left: 0;

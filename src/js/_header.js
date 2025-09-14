@@ -1,189 +1,201 @@
-export function header() {
-    document.addEventListener('DOMContentLoaded', () => {
-      gsap.config({ nullTargetWarn: false });
-  
-      const hamburger = document.querySelector('.js-hamburger');
-      const drawer = document.querySelector('.js-drawer');
-      const drawerOverlay = document.querySelector('.js-drawer-overlay');
-      const header = document.querySelector('.js-header');
-  
-      const openDrawer = () => {
-        drawer.classList.add('is-open');
-        document.body.classList.add('body-no-scroll');
-        hamburger.classList.add('is-open');
-      };
-  
-      const closeDrawer = () => {
-        drawer.classList.remove('is-open');
-        document.body.classList.remove('body-no-scroll');
-        hamburger.classList.remove('is-open');
-      };
-  
-      hamburger.addEventListener('click', () => {
-        if (drawer.classList.contains('is-open')) {
-          closeDrawer();
-        } else {
-          openDrawer();
-        }
-      });
-  
-      document.querySelectorAll('.p-header__nav-item a, .js-drawer a[href]').forEach(link => {
-        link.addEventListener('click', () => {
-          closeDrawer();
-        });
-      });
-  
-      drawerOverlay.addEventListener('click', () => {
-        closeDrawer();
-      });
-  
-      window.addEventListener('resize', () => {
-        if (window.matchMedia('(min-width: 768px)').matches) {
-          closeDrawer();
-        }
-        // リサイズ時はメガメニューも閉じる
-        closeAllMegas();
-      });
-  
-      /* ---------------------------
-       * Mega menu (SP/Tablet: tap toggle)
-       * --------------------------- */
-      const megaItems = Array.from(document.querySelectorAll('.p-header__nav-item--hasMega'));
-  
-      function closeAllMegas() {
-        megaItems.forEach(item => {
-          item.classList.remove('is-open');
-          const t = item.querySelector('.p-header__nav-link');
-          if (t) t.setAttribute('aria-expanded', 'false');
-        });
-      }
-  
-      megaItems.forEach(item => {
-        const trigger = item.querySelector('.p-header__nav-link'); // <span class="p-header__nav-link"> を想定（aではない）
-        const panel = item.querySelector('.p-header__subItems');
-        if (!trigger || !panel) return;
-  
-        // アクセシビリティ属性
-        trigger.setAttribute('role', 'button');
-        trigger.setAttribute('tabindex', '0');
-        trigger.setAttribute('aria-expanded', 'false');
-  
-        const open = (v) => {
-          item.classList.toggle('is-open', v);
-          trigger.setAttribute('aria-expanded', String(v));
-        };
-  
-        const toggleOnTap = (e) => {
-          // hoverがない環境（タッチ前提）だけJSで開閉
-          if (window.matchMedia('(hover: none)').matches) {
-            e.preventDefault();
-            open(!item.classList.contains('is-open'));
-          }
-        };
-  
-        // タップ/クリック/Enter/Spaceで開閉（SP/Tablet想定）
-        trigger.addEventListener('click', toggleOnTap);
-        trigger.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleOnTap(e); }
-          if (e.key === 'Escape') { open(false); trigger.blur(); }
-        });
-      });
-  
-      // 外側をクリックしたら閉じる（SP/Tablet時）
-      document.addEventListener('click', (e) => {
-        if (!window.matchMedia('(hover: none)').matches) return; // PCはCSSで処理
-        const inside = megaItems.some(item => item.contains(e.target));
-        if (!inside) closeAllMegas();
-      });
-  
-      // ドロワーを開くときは念のため閉じる
-      hamburger?.addEventListener('click', () => { closeAllMegas(); });
+// header.js
+import { gsap } from "gsap";
 
-       /* ====== メガメニュー ====== */
-    const menuItems = Array.from(document.querySelectorAll('.p-header__item--mega-menu'));
+export function header() {
+  document.addEventListener("DOMContentLoaded", () => {
+    gsap.config({ nullTargetWarn: false });
+
+    const hamburger     = document.querySelector(".js-hamburger");
+    const drawer        = document.querySelector(".js-drawer");
+    const drawerOverlay = document.querySelector(".js-drawer-overlay");
+
+    /* ---------------------------
+     * Drawer (hamburger)
+     * --------------------------- */
+    const openDrawer = () => {
+      if (!drawer) return;
+      drawer.classList.add("is-open");
+      document.body.classList.add("body-no-scroll");
+      hamburger?.classList.add("is-open");
+    };
+
+    const closeDrawer = () => {
+      if (!drawer) return;
+      drawer.classList.remove("is-open");
+      document.body.classList.remove("body-no-scroll");
+      hamburger?.classList.remove("is-open");
+    };
+
+    if (hamburger && drawer) {
+      hamburger.addEventListener("click", () => {
+        drawer.classList.contains("is-open") ? closeDrawer() : openDrawer();
+      });
+    }
+    drawerOverlay && drawerOverlay.addEventListener("click", closeDrawer);
+
+    // ヘッダーナビ（通常のグローバルナビ）を押したら閉じるだけ
+    document.querySelectorAll(".p-header__nav-item a").forEach((link) => {
+      link.addEventListener("click", closeDrawer);
+    });
+
+    // 768px以上にリサイズしたらドロワー/メガは閉じておく
+    window.addEventListener("resize", () => {
+      if (window.matchMedia("(min-width: 768px)").matches) {
+        closeDrawer();
+      }
+      closeAllSubmenus();
+    });
+
+    /* ---------------------------
+     * Drawer link: フェードアウトして遷移
+     * --------------------------- */
+    const drawerLinks = drawer
+      ? drawer.querySelectorAll("a[href]")
+      : [];
+
+    drawerLinks.forEach((a) => {
+      a.addEventListener("click", (e) => {
+        const href = a.getAttribute("href") || "";
+
+        // ctrl/⌘クリック・中クリック・外部・_blank・#・tel/mail・download は素通し
+        if (
+          (typeof e.button === "number" && e.button !== 0) ||
+          e.metaKey || e.ctrlKey || e.shiftKey || e.altKey ||
+          a.target === "_blank" ||
+          /^mailto:|^tel:/i.test(href) ||
+          a.hasAttribute("download") ||
+          href.startsWith("#") ||
+          (a.origin && a.origin !== location.origin)
+        ) {
+          closeDrawer(); // その場合は閉じるだけ
+          return;
+        }
+
+        // 内部遷移：フェードアウトしてから飛ぶ
+        e.preventDefault();
+        document.body.classList.add("is-leaving");
+
+        const go = () => { window.location.href = a.href; };
+        const onEnd = () => {
+          document.body.removeEventListener("transitionend", onEnd);
+          go();
+        };
+        document.body.addEventListener("transitionend", onEnd, { once: true });
+        setTimeout(go, 280); // 保険
+      });
+    });
+
+    // BFCacheからの復帰でフェード状態が残らないように
+    window.addEventListener("pageshow", (e) => {
+      if (e.persisted) document.body.classList.remove("is-leaving");
+    });
+
+    /* ---------------------------
+     * Mega menu（PC: hover / SP: tap）
+     * ターゲットは .p-header__item--mega-menu のみ
+     * --------------------------- */
+    const menuItems = Array.from(
+      document.querySelectorAll(".p-header__item--mega-menu")
+    );
 
     function closeAllSubmenus() {
-      menuItems.forEach(item => {
-        const wrap = item.querySelector('.p-p-header__sublist-wrap');
-        const trigger = item.querySelector(':scope > a, :scope > span, :scope > button');
+      menuItems.forEach((item) => {
+        const wrap    = item.querySelector(".p-p-header__sublist-wrap");
+        const trigger = item.querySelector(":scope > a, :scope > span, :scope > button");
         if (!wrap) return;
         gsap.killTweensOf(wrap);
-        gsap.set(wrap, { clearProps: 'all', display: 'none', opacity: 0, y: 4, pointerEvents: 'none' });
-        trigger?.setAttribute('aria-expanded', 'false');
+        gsap.set(wrap, {
+          clearProps: "all",
+          display: "none",
+          opacity: 0,
+          y: 4,
+          pointerEvents: "none",
+        });
+        trigger?.setAttribute("aria-expanded", "false");
+        item.classList.remove("is-open");
       });
     }
 
-    menuItems.forEach(item => {
-      const wrap = item.querySelector('.p-p-header__sublist-wrap');
-      const trigger = item.querySelector(':scope > a, :scope > span, :scope > button');
+    menuItems.forEach((item) => {
+      const wrap    = item.querySelector(".p-p-header__sublist-wrap");
+      const trigger = item.querySelector(":scope > a, :scope > span, :scope > button");
       if (!wrap || !trigger) return;
 
       // A11y
-      trigger.setAttribute('role', trigger.tagName === 'A' ? 'link' : 'button');
-      trigger.setAttribute('tabindex', trigger.getAttribute('tabindex') ?? '0');
-      trigger.setAttribute('aria-expanded', 'false');
+      trigger.setAttribute("role", trigger.tagName === "A" ? "link" : "button");
+      if (!trigger.hasAttribute("tabindex")) trigger.setAttribute("tabindex", "0");
+      trigger.setAttribute("aria-expanded", "false");
 
       let open = false;
 
       const show = () => {
         if (open) return;
         open = true;
+        item.classList.add("is-open");
         gsap.killTweensOf(wrap);
-        wrap.style.display = 'block';
-        gsap.fromTo(wrap,
-          { opacity: 0, y: 4, pointerEvents: 'none' },
-          { opacity: 1, y: 0, duration: 0.18, ease: 'power2.out',
-            onStart: () => { wrap.style.pointerEvents = 'auto'; },
+        wrap.style.display = "block";
+        gsap.fromTo(
+          wrap,
+          { opacity: 0, y: 4, pointerEvents: "none" },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.18,
+            ease: "power2.out",
+            onStart: () => { wrap.style.pointerEvents = "auto"; },
           }
         );
-        trigger.setAttribute('aria-expanded', 'true');
+        trigger.setAttribute("aria-expanded", "true");
       };
 
       const hide = () => {
         if (!open) return;
         open = false;
+        item.classList.remove("is-open");
         gsap.killTweensOf(wrap);
         gsap.to(wrap, {
-          opacity: 0, y: 4, duration: 0.18, ease: 'power2.out',
+          opacity: 0,
+          y: 4,
+          duration: 0.18,
+          ease: "power2.out",
           onComplete: () => {
-            wrap.style.display = 'none';
-            wrap.style.pointerEvents = 'none';
-          }
+            wrap.style.display = "none";
+            wrap.style.pointerEvents = "none";
+          },
         });
-        trigger.setAttribute('aria-expanded', 'false');
+        trigger.setAttribute("aria-expanded", "false");
       };
 
-      // PC: hoverで開閉（.p-p-header__sublist-wrapのpadding-topで橋渡し済み）
-      item.addEventListener('mouseenter', () => {
-        if (!window.matchMedia('(hover: none)').matches) show();
-      });
-      item.addEventListener('mouseleave', () => {
-        if (!window.matchMedia('(hover: none)').matches) hide();
-      });
+      const canHover = window.matchMedia("(hover: hover)").matches &&
+                       window.matchMedia("(pointer: fine)").matches;
 
-      // SP/タブレット: タップでトグル（hoverなし環境）
+      // PC: hoverで開閉
+      if (canHover) {
+        item.addEventListener("mouseenter", show);
+        item.addEventListener("mouseleave", hide);
+      }
+
+      // SP/タブレット: タップトグル
       const onTapToggle = (e) => {
-        if (window.matchMedia('(hover: none)').matches) {
+        if (!canHover) {
           e.preventDefault();
           open ? hide() : show();
         }
       };
-      trigger.addEventListener('click', onTapToggle);
-      trigger.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onTapToggle(e); }
-        if (e.key === 'Escape') { hide(); trigger.blur(); }
+      trigger.addEventListener("click", onTapToggle);
+      trigger.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onTapToggle(e); }
+        if (e.key === "Escape") { hide(); trigger.blur(); }
       });
 
-      // 外側クリックで閉じる（SP/タブ）
-      document.addEventListener('click', (e) => {
-        if (!window.matchMedia('(hover: none)').matches) return;
+      // SP/タブ: 外側タップで閉じる
+      document.addEventListener("click", (e) => {
+        if (canHover) return; // PCはCSS/hoverで制御
         if (!item.contains(e.target)) hide();
       });
     });
 
     // 初期は全部閉じておく
     closeAllSubmenus();
-    
-    });
-  }
-  
+  });
+}

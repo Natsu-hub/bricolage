@@ -2,33 +2,38 @@
 import { gsap } from "gsap";
 
 export function mv() {
+   // ▼トップページの判定は .p-top-mv があるかどうかで
+   const isTop = !!document.querySelector(".p-top-mv");
+   if (!isTop) return;
+ 
+
   // 初期状態
   gsap.set(['.p-top-mv__title'], { autoAlpha: 0 });
-  gsap.set(['.p-top-mv__en-text', '.p-top-mv__sub-text'], { autoAlpha: 0,y: 0 });
-  gsap.set('.p-top-mv__img', { autoAlpha: 0, x: 15 });
-  gsap.set('.p-top-mv__illustration', { autoAlpha: 0 });
-  gsap.set('.p-header__nav-items--top', { autoAlpha: 0, y: -20, X:0 }); 
-  gsap.set('.p-header__nav-contact--top', { autoAlpha: 0, y: -20, X:0 }); 
+  gsap.set(['.p-top-mv__en-text', '.p-top-mv__sub-text'], { autoAlpha: 0, y: 0 });
+  gsap.set('.p-top-mv__img', { autoAlpha: 0, x: 10 });
+  gsap.set('.p-top-mv__illustration', { autoAlpha: 0, x: 10 });
+
+  // ヘッダーはトップだけアニメ対象に（非トップでは触らない）
+  gsap.set('.p-header__nav-items--top',    { autoAlpha: 0, y: -20, x: 0 });
+  gsap.set('.p-header__nav-contact--top',  { autoAlpha: 0, y: -20, x: 0 });
+  // gsap.set('.p-header__hamburger',         { autoAlpha: 0, y: -20, x: 0 });
 
   const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
 
-  // 1) 最初にタイトル
-  tl.to('.p-top-mv__title', { autoAlpha: 1, duration: 0.8 })
+  tl.to('.p-top-mv__title', { autoAlpha: 1 })
+  .to('.p-top-mv__en-text',  { autoAlpha: 1, duration: 0.8, y: 0 }, '+=0.8')
+  .to('.p-top-mv__sub-text', { autoAlpha: 1, duration: 0.8, y: 0 }, '<')
 
-    // 2) 次に en-text と sub-text を同時に
-    .to('.p-top-mv__en-text',  { autoAlpha: 1, duration: 0.8, y:0 }, '+=0.3')
-    .to('.p-top-mv__sub-text', { autoAlpha: 1, duration: 0.8, y:0 }, '<')
+  // 画像は en-text/sub-text の「開始」から 0.2s 後にスタート
+  .to('.p-top-mv__img', { autoAlpha: 1, x: 0, duration: 0.7 }, '<+=0.4')
 
-    // 3) 画像と同時にヘッダーも出す（同一ラベルで同期）
-    .addLabel('mediaIn', '+=0.05')
-    .to('.p-top-mv__img', { autoAlpha: 1, x: 0, duration: 0.8 }, 'mediaIn')
-    .to('.p-header__nav-items--top', { autoAlpha: 1, y: 0, duration: 0.8 }, 'mediaIn')
-    .to('.p-header__nav-contact--top', { autoAlpha: 1, y: 0, duration: 0.8 }, 'mediaIn')
+  // ヘッダーも画像にピッタリ同期
+  .to('.p-header__nav-items--top',   { autoAlpha: 1, y: 0, duration: 0.7 }, '<')
+  .to('.p-header__nav-contact--top', { autoAlpha: 1, y: 0, duration: 0.7 }, '<')
 
-    // 4) イラストは画像と同時（必要なら 'mediaIn+=0.1' などで少し遅らせ可）
-    .to('.p-top-mv__illustration',{ autoAlpha: 1, duration: 0.8 }, 'mediaIn');
+  // イラストは画像より 0.1s 遅らせ（好みで調整）
+  .to('.p-top-mv__illustration', { autoAlpha: 1, x: 0, duration: 0.7 }, '<+=0.1');
 
-  // tl.timeScale(1.2); // 全体速度調整したいとき
 }
 
 document.addEventListener('DOMContentLoaded', mv);

@@ -69,7 +69,7 @@ export function animation() {
           duration: 1,
           scrollTrigger: {
             trigger: element,
-            start: "top 85%",
+            start: "top 100%",
             toggleActions: 'play none none reverse',
           },
         }
@@ -85,13 +85,14 @@ export function animation() {
           x: -30,
         },
         {
+          delay:.7,
           opacity: 1,
           x: 0,
           duration: 1,
           ease: "power1.out",
           scrollTrigger: {
             trigger: element, // トリガーとなる要素を指定
-            start: "top 70%", // スクロール開始位置を指定
+            start: "top 80%", // スクロール開始位置を指定
             toggleActions: 'play none none reverse',
             //markers: true,
           },

@@ -75,7 +75,7 @@ function animation() {
         duration: 1,
         scrollTrigger: {
           trigger: element,
-          start: "top 85%",
+          start: "top 100%",
           toggleActions: 'play none none reverse'
         }
       });
@@ -86,6 +86,7 @@ function animation() {
         opacity: 0,
         x: -30
       }, {
+        delay: .7,
         opacity: 1,
         x: 0,
         duration: 1,
@@ -93,7 +94,7 @@ function animation() {
         scrollTrigger: {
           trigger: element,
           // トリガーとなる要素を指定
-          start: "top 70%",
+          start: "top 80%",
           // スクロール開始位置を指定
           toggleActions: 'play none none reverse'
           //markers: true,
@@ -273,204 +274,189 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "header": () => (/* binding */ header)
 /* harmony export */ });
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+// header.js
+
 function header() {
-  document.addEventListener('DOMContentLoaded', function () {
-    gsap.config({
+  document.addEventListener("DOMContentLoaded", function () {
+    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.config({
       nullTargetWarn: false
     });
-    var hamburger = document.querySelector('.js-hamburger');
-    var drawer = document.querySelector('.js-drawer');
-    var drawerOverlay = document.querySelector('.js-drawer-overlay');
-    var header = document.querySelector('.js-header');
+    var hamburger = document.querySelector(".js-hamburger");
+    var drawer = document.querySelector(".js-drawer");
+    var drawerOverlay = document.querySelector(".js-drawer-overlay");
+
+    /* ---------------------------
+     * Drawer (hamburger)
+     * --------------------------- */
     var openDrawer = function openDrawer() {
-      drawer.classList.add('is-open');
-      document.body.classList.add('body-no-scroll');
-      hamburger.classList.add('is-open');
+      if (!drawer) return;
+      drawer.classList.add("is-open");
+      document.body.classList.add("body-no-scroll");
+      hamburger === null || hamburger === void 0 ? void 0 : hamburger.classList.add("is-open");
     };
     var closeDrawer = function closeDrawer() {
-      drawer.classList.remove('is-open');
-      document.body.classList.remove('body-no-scroll');
-      hamburger.classList.remove('is-open');
+      if (!drawer) return;
+      drawer.classList.remove("is-open");
+      document.body.classList.remove("body-no-scroll");
+      hamburger === null || hamburger === void 0 ? void 0 : hamburger.classList.remove("is-open");
     };
-    hamburger.addEventListener('click', function () {
-      if (drawer.classList.contains('is-open')) {
-        closeDrawer();
-      } else {
-        openDrawer();
-      }
-    });
-    document.querySelectorAll('.p-header__nav-item a, .js-drawer a[href]').forEach(function (link) {
-      link.addEventListener('click', function () {
-        closeDrawer();
+    if (hamburger && drawer) {
+      hamburger.addEventListener("click", function () {
+        drawer.classList.contains("is-open") ? closeDrawer() : openDrawer();
       });
+    }
+    drawerOverlay && drawerOverlay.addEventListener("click", closeDrawer);
+
+    // ヘッダーナビ（通常のグローバルナビ）を押したら閉じるだけ
+    document.querySelectorAll(".p-header__nav-item a").forEach(function (link) {
+      link.addEventListener("click", closeDrawer);
     });
-    drawerOverlay.addEventListener('click', function () {
-      closeDrawer();
-    });
-    window.addEventListener('resize', function () {
-      if (window.matchMedia('(min-width: 768px)').matches) {
+
+    // 768px以上にリサイズしたらドロワー/メガは閉じておく
+    window.addEventListener("resize", function () {
+      if (window.matchMedia("(min-width: 768px)").matches) {
         closeDrawer();
       }
-      // リサイズ時はメガメニューも閉じる
-      closeAllMegas();
+      closeAllSubmenus();
     });
 
     /* ---------------------------
-     * Mega menu (SP/Tablet: tap toggle)
+     * Drawer link: フェードアウトして遷移
      * --------------------------- */
-    var megaItems = Array.from(document.querySelectorAll('.p-header__nav-item--hasMega'));
-    function closeAllMegas() {
-      megaItems.forEach(function (item) {
-        item.classList.remove('is-open');
-        var t = item.querySelector('.p-header__nav-link');
-        if (t) t.setAttribute('aria-expanded', 'false');
-      });
-    }
-    megaItems.forEach(function (item) {
-      var trigger = item.querySelector('.p-header__nav-link'); // <span class="p-header__nav-link"> を想定（aではない）
-      var panel = item.querySelector('.p-header__subItems');
-      if (!trigger || !panel) return;
+    var drawerLinks = drawer ? drawer.querySelectorAll("a[href]") : [];
+    drawerLinks.forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        var href = a.getAttribute("href") || "";
 
-      // アクセシビリティ属性
-      trigger.setAttribute('role', 'button');
-      trigger.setAttribute('tabindex', '0');
-      trigger.setAttribute('aria-expanded', 'false');
-      var open = function open(v) {
-        item.classList.toggle('is-open', v);
-        trigger.setAttribute('aria-expanded', String(v));
-      };
-      var toggleOnTap = function toggleOnTap(e) {
-        // hoverがない環境（タッチ前提）だけJSで開閉
-        if (window.matchMedia('(hover: none)').matches) {
-          e.preventDefault();
-          open(!item.classList.contains('is-open'));
+        // ctrl/⌘クリック・中クリック・外部・_blank・#・tel/mail・download は素通し
+        if (typeof e.button === "number" && e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || a.target === "_blank" || /^mailto:|^tel:/i.test(href) || a.hasAttribute("download") || href.startsWith("#") || a.origin && a.origin !== location.origin) {
+          closeDrawer(); // その場合は閉じるだけ
+          return;
         }
-      };
 
-      // タップ/クリック/Enter/Spaceで開閉（SP/Tablet想定）
-      trigger.addEventListener('click', toggleOnTap);
-      trigger.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          toggleOnTap(e);
-        }
-        if (e.key === 'Escape') {
-          open(false);
-          trigger.blur();
-        }
+        // 内部遷移：フェードアウトしてから飛ぶ
+        e.preventDefault();
+        document.body.classList.add("is-leaving");
+        var go = function go() {
+          window.location.href = a.href;
+        };
+        var onEnd = function onEnd() {
+          document.body.removeEventListener("transitionend", onEnd);
+          go();
+        };
+        document.body.addEventListener("transitionend", onEnd, {
+          once: true
+        });
+        setTimeout(go, 280); // 保険
       });
     });
 
-    // 外側をクリックしたら閉じる（SP/Tablet時）
-    document.addEventListener('click', function (e) {
-      if (!window.matchMedia('(hover: none)').matches) return; // PCはCSSで処理
-      var inside = megaItems.some(function (item) {
-        return item.contains(e.target);
-      });
-      if (!inside) closeAllMegas();
+    // BFCacheからの復帰でフェード状態が残らないように
+    window.addEventListener("pageshow", function (e) {
+      if (e.persisted) document.body.classList.remove("is-leaving");
     });
 
-    // ドロワーを開くときは念のため閉じる
-    hamburger === null || hamburger === void 0 ? void 0 : hamburger.addEventListener('click', function () {
-      closeAllMegas();
-    });
-
-    /* ====== メガメニュー ====== */
-    var menuItems = Array.from(document.querySelectorAll('.p-header__item--mega-menu'));
+    /* ---------------------------
+     * Mega menu（PC: hover / SP: tap）
+     * ターゲットは .p-header__item--mega-menu のみ
+     * --------------------------- */
+    var menuItems = Array.from(document.querySelectorAll(".p-header__item--mega-menu"));
     function closeAllSubmenus() {
       menuItems.forEach(function (item) {
-        var wrap = item.querySelector('.p-p-header__sublist-wrap');
-        var trigger = item.querySelector(':scope > a, :scope > span, :scope > button');
+        var wrap = item.querySelector(".p-p-header__sublist-wrap");
+        var trigger = item.querySelector(":scope > a, :scope > span, :scope > button");
         if (!wrap) return;
-        gsap.killTweensOf(wrap);
-        gsap.set(wrap, {
-          clearProps: 'all',
-          display: 'none',
+        gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.killTweensOf(wrap);
+        gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.set(wrap, {
+          clearProps: "all",
+          display: "none",
           opacity: 0,
           y: 4,
-          pointerEvents: 'none'
+          pointerEvents: "none"
         });
-        trigger === null || trigger === void 0 ? void 0 : trigger.setAttribute('aria-expanded', 'false');
+        trigger === null || trigger === void 0 ? void 0 : trigger.setAttribute("aria-expanded", "false");
+        item.classList.remove("is-open");
       });
     }
     menuItems.forEach(function (item) {
-      var _trigger$getAttribute;
-      var wrap = item.querySelector('.p-p-header__sublist-wrap');
-      var trigger = item.querySelector(':scope > a, :scope > span, :scope > button');
+      var wrap = item.querySelector(".p-p-header__sublist-wrap");
+      var trigger = item.querySelector(":scope > a, :scope > span, :scope > button");
       if (!wrap || !trigger) return;
 
       // A11y
-      trigger.setAttribute('role', trigger.tagName === 'A' ? 'link' : 'button');
-      trigger.setAttribute('tabindex', (_trigger$getAttribute = trigger.getAttribute('tabindex')) !== null && _trigger$getAttribute !== void 0 ? _trigger$getAttribute : '0');
-      trigger.setAttribute('aria-expanded', 'false');
+      trigger.setAttribute("role", trigger.tagName === "A" ? "link" : "button");
+      if (!trigger.hasAttribute("tabindex")) trigger.setAttribute("tabindex", "0");
+      trigger.setAttribute("aria-expanded", "false");
       var open = false;
       var show = function show() {
         if (open) return;
         open = true;
-        gsap.killTweensOf(wrap);
-        wrap.style.display = 'block';
-        gsap.fromTo(wrap, {
+        item.classList.add("is-open");
+        gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.killTweensOf(wrap);
+        wrap.style.display = "block";
+        gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.fromTo(wrap, {
           opacity: 0,
           y: 4,
-          pointerEvents: 'none'
+          pointerEvents: "none"
         }, {
           opacity: 1,
           y: 0,
           duration: 0.18,
-          ease: 'power2.out',
+          ease: "power2.out",
           onStart: function onStart() {
-            wrap.style.pointerEvents = 'auto';
+            wrap.style.pointerEvents = "auto";
           }
         });
-        trigger.setAttribute('aria-expanded', 'true');
+        trigger.setAttribute("aria-expanded", "true");
       };
       var hide = function hide() {
         if (!open) return;
         open = false;
-        gsap.killTweensOf(wrap);
-        gsap.to(wrap, {
+        item.classList.remove("is-open");
+        gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.killTweensOf(wrap);
+        gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(wrap, {
           opacity: 0,
           y: 4,
           duration: 0.18,
-          ease: 'power2.out',
+          ease: "power2.out",
           onComplete: function onComplete() {
-            wrap.style.display = 'none';
-            wrap.style.pointerEvents = 'none';
+            wrap.style.display = "none";
+            wrap.style.pointerEvents = "none";
           }
         });
-        trigger.setAttribute('aria-expanded', 'false');
+        trigger.setAttribute("aria-expanded", "false");
       };
+      var canHover = window.matchMedia("(hover: hover)").matches && window.matchMedia("(pointer: fine)").matches;
 
-      // PC: hoverで開閉（.p-p-header__sublist-wrapのpadding-topで橋渡し済み）
-      item.addEventListener('mouseenter', function () {
-        if (!window.matchMedia('(hover: none)').matches) show();
-      });
-      item.addEventListener('mouseleave', function () {
-        if (!window.matchMedia('(hover: none)').matches) hide();
-      });
+      // PC: hoverで開閉
+      if (canHover) {
+        item.addEventListener("mouseenter", show);
+        item.addEventListener("mouseleave", hide);
+      }
 
-      // SP/タブレット: タップでトグル（hoverなし環境）
+      // SP/タブレット: タップトグル
       var onTapToggle = function onTapToggle(e) {
-        if (window.matchMedia('(hover: none)').matches) {
+        if (!canHover) {
           e.preventDefault();
           open ? hide() : show();
         }
       };
-      trigger.addEventListener('click', onTapToggle);
-      trigger.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') {
+      trigger.addEventListener("click", onTapToggle);
+      trigger.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
           onTapToggle(e);
         }
-        if (e.key === 'Escape') {
+        if (e.key === "Escape") {
           hide();
           trigger.blur();
         }
       });
 
-      // 外側クリックで閉じる（SP/タブ）
-      document.addEventListener('click', function (e) {
-        if (!window.matchMedia('(hover: none)').matches) return;
+      // SP/タブ: 外側タップで閉じる
+      document.addEventListener("click", function (e) {
+        if (canHover) return; // PCはCSS/hoverで制御
         if (!item.contains(e.target)) hide();
       });
     });
@@ -541,6 +527,10 @@ __webpack_require__.r(__webpack_exports__);
 // mv.js
 
 function mv() {
+  // ▼トップページの判定は .p-top-mv があるかどうかで
+  var isTop = !!document.querySelector(".p-top-mv");
+  if (!isTop) return;
+
   // 初期状態
   gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.set(['.p-top-mv__title'], {
     autoAlpha: 0
@@ -551,68 +541,68 @@ function mv() {
   });
   gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.set('.p-top-mv__img', {
     autoAlpha: 0,
-    x: 15
+    x: 10
   });
   gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.set('.p-top-mv__illustration', {
-    autoAlpha: 0
+    autoAlpha: 0,
+    x: 10
   });
+
+  // ヘッダーはトップだけアニメ対象に（非トップでは触らない）
   gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.set('.p-header__nav-items--top', {
     autoAlpha: 0,
     y: -20,
-    X: 0
+    x: 0
   });
   gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.set('.p-header__nav-contact--top', {
     autoAlpha: 0,
     y: -20,
-    X: 0
+    x: 0
   });
+  // gsap.set('.p-header__hamburger',         { autoAlpha: 0, y: -20, x: 0 });
+
   var tl = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     defaults: {
       ease: 'power2.out'
     }
   });
-
-  // 1) 最初にタイトル
   tl.to('.p-top-mv__title', {
-    autoAlpha: 1,
-    duration: 0.8
-  })
-
-  // 2) 次に en-text と sub-text を同時に
-  .to('.p-top-mv__en-text', {
+    autoAlpha: 1
+  }).to('.p-top-mv__en-text', {
     autoAlpha: 1,
     duration: 0.8,
     y: 0
-  }, '+=0.3').to('.p-top-mv__sub-text', {
+  }, '+=0.8').to('.p-top-mv__sub-text', {
     autoAlpha: 1,
     duration: 0.8,
     y: 0
   }, '<')
 
-  // 3) 画像と同時にヘッダーも出す（同一ラベルで同期）
-  .addLabel('mediaIn', '+=0.05').to('.p-top-mv__img', {
+  // 画像は en-text/sub-text の「開始」から 0.2s 後にスタート
+  .to('.p-top-mv__img', {
     autoAlpha: 1,
     x: 0,
-    duration: 0.8
-  }, 'mediaIn').to('.p-header__nav-items--top', {
-    autoAlpha: 1,
-    y: 0,
-    duration: 0.8
-  }, 'mediaIn').to('.p-header__nav-contact--top', {
-    autoAlpha: 1,
-    y: 0,
-    duration: 0.8
-  }, 'mediaIn')
+    duration: 0.7
+  }, '<+=0.4')
 
-  // 4) イラストは画像と同時（必要なら 'mediaIn+=0.1' などで少し遅らせ可）
+  // ヘッダーも画像にピッタリ同期
+  .to('.p-header__nav-items--top', {
+    autoAlpha: 1,
+    y: 0,
+    duration: 0.7
+  }, '<').to('.p-header__nav-contact--top', {
+    autoAlpha: 1,
+    y: 0,
+    duration: 0.7
+  }, '<')
+
+  // イラストは画像より 0.1s 遅らせ（好みで調整）
   .to('.p-top-mv__illustration', {
     autoAlpha: 1,
-    duration: 0.8
-  }, 'mediaIn');
-
-  // tl.timeScale(1.2); // 全体速度調整したいとき
+    x: 0,
+    duration: 0.7
+  }, '<+=0.1');
 }
-
 document.addEventListener('DOMContentLoaded', mv);
 
 /***/ }),
@@ -765,6 +755,8 @@ function text() {
         autoAlpha: 0,
         y: '0.4em'
       }, {
+        //FVアニメーションのためdelayをセット（通常は外す）
+        delay: .5,
         autoAlpha: 1,
         y: 0,
         duration: 0.8,

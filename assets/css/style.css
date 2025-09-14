@@ -54,8 +54,17 @@ body {
 	letter-spacing: 0.02em;
 	line-height: 1.8;
 	min-height: 100vh;
+	opacity: 0;
 	position: relative;
 	z-index: -1;
+}
+
+/* ページ離脱トランジション */
+
+body.is-leaving {
+	opacity: 0;
+	-webkit-transition: opacity 0.2s ease;
+	transition: opacity 0.2s ease;
 }
 
 .body-no-scroll {
@@ -678,7 +687,7 @@ th {
 	position: fixed;
 	right: 0;
 	top: 0;
-	z-index: 1035;
+	z-index: 40;
 }
 
 .l-inner {
@@ -2617,6 +2626,10 @@ th {
 }
 
 .p-header__inner {
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -2628,7 +2641,6 @@ th {
 	        justify-content: space-between;
 	margin-inline: auto;
 	max-width: 90rem;
-	padding-inline: 2.5rem;
 	position: relative;
 	width: 100%;
 	z-index: 35;
@@ -2640,8 +2652,7 @@ th {
 	        flex-shrink: 0;
 	font-size: 0;
 	height: inherit;
-	max-width: 11.25rem;
-	width: 100%;
+	width: 11.25rem;
 	z-index: 999;
 }
 
@@ -2856,7 +2867,7 @@ th {
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
-	height: 2rem;
+	height: 4.5rem;
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
 	    -ms-flex-pack: center;
@@ -2865,8 +2876,9 @@ th {
 	outline: none;
 	padding: 0;
 	position: relative;
-	-webkit-transition: 0.3s;
-	transition: 0.3s;
+	right: 0;
+	-webkit-transition: all 0.3s ease-out 0s;
+	transition: all 0.3s ease-out 0s;
 	width: 4.5rem;
 	z-index: 999;
 }
@@ -2979,18 +2991,19 @@ th {
 	background: linear-gradient(180deg, #f6fbff 0%, #eaf0f9 100%);
 	bottom: 0;
 	left: 0;
+	opacity: 0;
 	overflow-y: scroll;
 	padding-top: 6.3125rem;
+	pointer-events: none;
 	position: fixed;
 	right: 0;
 	scrollbar-width: none;
 	top: 0;
-	-webkit-transform: translateX(100%);
-	        transform: translateX(100%);
-	-webkit-transition: -webkit-transform 0.3s ease;
-	transition: -webkit-transform 0.3s ease;
-	transition: transform 0.3s ease;
-	transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+	-webkit-transition: -webkit-transform 1s ease;
+	transition: -webkit-transform 1s ease;
+	transition: transform 1s ease;
+	transition: transform 1s ease, -webkit-transform 1s ease;
+	visibility: hidden;
 	width: 100%;
 	z-index: 34;
 }
@@ -3002,9 +3015,20 @@ th {
 	position: relative;
 }
 
+/* オーバーレイも開いている時だけ反応 */
+
+.p-header__drawer-bg {
+	pointer-events: none;
+}
+
+.p-header__drawer.is-open .p-header__drawer-bg {
+	pointer-events: auto;
+}
+
 .p-header__drawer.is-open {
-	-webkit-transform: translateX(0);
-	        transform: translateX(0);
+	opacity: 1;
+	pointer-events: auto;
+	visibility: visible;
 }
 
 .p-header__drawer::-webkit-scrollbar {
@@ -3622,6 +3646,15 @@ th {
 
 .u-sm {
 	display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+body.is-leaving {
+	-webkit-transition: none;
+	transition: none;
+}
+
 }
 
 @media (hover: hover) {
@@ -4667,10 +4700,6 @@ body {
 
 .p-header {
 	height: 4rem;
-}
-
-.p-header__inner {
-	padding-inline: 1.25rem 1.25rem;
 }
 
 .p-header__logo {

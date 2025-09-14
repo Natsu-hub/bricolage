@@ -11,10 +11,24 @@
     <link rel="apple-touch-icon" type="image/png" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="/icon-192x192.png">
     <link rel="shortcut icon" href="<?php echo esc_url(get_template_directory_uri()); ?>/favicon.ico">
+    <style>
+    /* first paint 用（最小限） */
+    .p-header__inner {
+        padding-left: 20px;
+        padding-right: 20px
+    }
+
+    @media (min-width:768px) {
+        .p-header__inner {
+            padding-left: 40px;
+            padding-right: 40px
+        }
+    }
+    </style>
     <?php wp_head(); ?>
 </head>
 
-<body id="body" <?php body_class(); ?>>
+<body id="body" class="js-fadeIn" <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <div class="l-footer-fixed">
         <!-- <body> -->
@@ -64,12 +78,10 @@
                                 </li>
                             </ul>
                     </nav>
-                    <?php if ( is_front_page() ) : ?>
-                    <div class="p-header__nav-contact p-header__nav-contact--top">
-                        <?php else : ?>
-                        <ul class="p-header__nav-contact">
-                            <?php endif; ?>
-                            <a class="p-header__nav-contact-item c-btn-contact" href="<?php echo CONTACT_URL; ?>"><span>お問い合わせ</span></a>
+                    <div class="p-header__nav-contact<?php echo is_front_page() ? ' p-header__nav-contact--top' : ''; ?>">
+                        <a class="p-header__nav-contact-item c-btn-contact" href="<?php echo CONTACT_URL; ?>">
+                            <span>お問い合わせ</span>
+                        </a>
                     </div>
                     <button class="p-header__hamburger js-hamburger u-mobile">
                         <p class="p-header__hamburger-text">menu</p>
@@ -135,14 +147,3 @@
                 </div>
             </div>
         </header>
-        <!-- c-cta -->
-        <!-- <div class="c-cta">
-            <a href="<?php echo CONTACT_URL; ?>">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/common/icon-mail.svg" alt="メールのアイコン" width="30" height="23">
-                <span>CONTACT</span>
-            </a>
-        </div> -->
-        <!-- c-scroll-top -->
-        <!-- <button class="c-scroll-top" id="js-scrollTop" title="トップへ戻る">
-            <span class="c-scroll-top__arrow"></span>
-        </button> -->

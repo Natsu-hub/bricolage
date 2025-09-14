@@ -58,6 +58,8 @@ export function text() {
         spans,
         { autoAlpha: 0, y: '0.4em' },
         {
+          //FVアニメーションのためdelayをセット（通常は外す）
+          delay:.5,
           autoAlpha: 1,
           y: 0,
           duration: 0.8,
